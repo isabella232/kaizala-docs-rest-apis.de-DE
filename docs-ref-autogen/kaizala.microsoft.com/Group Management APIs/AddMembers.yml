@@ -1,0 +1,59 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addmembers
+name: Add Members
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: |-
+  <span data-ttu-id="b7b81-101">Hinzufügen von Mitgliedern zu einer Gruppe</span><span class="sxs-lookup"><span data-stu-id="b7b81-101">Add members to a group</span></span>  
+  <span data-ttu-id="b7b81-102">Diese API ermöglicht das Hinzufügen von Mitgliedern zu einer Gruppe</span><span class="sxs-lookup"><span data-stu-id="b7b81-102">This API lets addition of members to a group</span></span>
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'PUT https://{endpoint-url}/v1/groups/{test-group-id}/members'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: <span data-ttu-id="b7b81-103">GUID der angegebenen Gruppe zugeordnet</span><span class="sxs-lookup"><span data-stu-id="b7b81-103">GUID associated with the given group</span></span>
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: members
+        in: body
+        isRequired: true
+        description: <span data-ttu-id="b7b81-104">Array von Rufnummern (mit Countrycode) der neuen Elemente hinzugefügt werden soll</span><span class="sxs-lookup"><span data-stu-id="b7b81-104">Array of phone numbers(with countrycode) of new members to be added</span></span>
+        types:
+          - uid: string
+            isArray: true
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="b7b81-105">Access Token vom Auth Endpunkt</span><span class="sxs-lookup"><span data-stu-id="b7b81-105">Access Token received from the auth end-point</span></span>
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="b7b81-106">application/json</span><span class="sxs-lookup"><span data-stu-id="b7b81-106">application/json</span></span>
+    types:
+      - uid: string
+definitions:
+  - name: Request - Add members to a group
+    description: <span data-ttu-id="b7b81-107">Hinzufügen von Mitgliedern zu einer Gruppe</span><span class="sxs-lookup"><span data-stu-id="b7b81-107">Add members to a group</span></span>
+    kind: object
+    properties:
+      - name: members
+        description: <span data-ttu-id="b7b81-108">Array von Rufnummern (mit Countrycode) der neuen Elemente hinzugefügt werden soll</span><span class="sxs-lookup"><span data-stu-id="b7b81-108">Array of phone numbers(with countrycode) of new members to be added</span></span>
+        types:
+          - uid: string
+            isArray: true
+examples: []
+security: []

@@ -1,0 +1,39 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis.fetchjobs
+name: Fetch Jobs
+service: Kaizala
+groupName: Content Query APIs
+apiVersion: '1.0'
+summary: <span data-ttu-id="657bb-101">Abrufen von Aufträgen in einer Gruppe</span><span class="sxs-lookup"><span data-stu-id="657bb-101">Fetch jobs in a group</span></span>
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'GET https://{endpoint-url}/v1/groups/{test-group-id}/actions?actionType={actionType}'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: <span data-ttu-id="657bb-102">GUID der angegebenen Gruppe zugeordnet</span><span class="sxs-lookup"><span data-stu-id="657bb-102">GUID associated with the given group</span></span>
+    types:
+      - uid: string
+  - name: actionType
+    in: query
+    isRequired: true
+    description: <span data-ttu-id="657bb-103">Typ der Aktion</span><span class="sxs-lookup"><span data-stu-id="657bb-103">Type of Action</span></span>
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="657bb-104">Access Token vom Auth Endpunkt</span><span class="sxs-lookup"><span data-stu-id="657bb-104">Access Token received from the auth end-point</span></span>
+    types:
+      - uid: string
+definitions: []
+examples: []
+security: []

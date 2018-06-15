@@ -1,0 +1,17 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks
+name: Subscription Webhooks
+summary: '<span data-ttu-id="39e49-101">Microsoft Kaizala-API bietet ebenfalls eine Möglichkeit für Entwickler für bestimmte Ereignisse in der Kaizala-Plattform über WebHooks registriert.</span><span class="sxs-lookup"><span data-stu-id="39e49-101">Microsoft Kaizala API also provides a way for developers to register for specific events within the Kaizala platform via WebHooks.</span></span> <br />  <span data-ttu-id="39e49-102">WebHooks besteht aus einem kompakten HTTP-Muster ein einfachen Publisher-Abonnent-Modells für Verdrahtung zusammen Web-APIs und SaaS Services bereitstellen.</span><span class="sxs-lookup"><span data-stu-id="39e49-102">WebHooks is a lightweight HTTP pattern providing a simple publisher/subscriber model for wiring together Web APIs and SaaS services.</span></span> <span data-ttu-id="39e49-103">Wenn ein Ereignis in Kaizala passiert, wird eine Benachrichtigung in Form von HTTP POST-Anforderung an die registrierten Abonnenten gesendet.</span><span class="sxs-lookup"><span data-stu-id="39e49-103">When an event happens in Kaizala, a notification is sent in the form of an HTTP POST request to registered subscribers.</span></span> <span data-ttu-id="39e49-104">Die POST-Anforderung enthält Informationen über das Ereignis für den Empfänger an, entsprechend agieren kann.</span><span class="sxs-lookup"><span data-stu-id="39e49-104">The POST request contains information about the event which makes it possible for the receiver to act accordingly.</span></span> <br /> <br />  <span data-ttu-id="39e49-105">WebHooks verwenden, können Sie verschiedene Abonnieren von Ereignissen, die innerhalb einer Unterhaltung Gruppe in Kaizala Kontext auftreten.</span><span class="sxs-lookup"><span data-stu-id="39e49-105">Using WebHooks, you can subscribe to various events that occur within a conversation group context in Kaizala.</span></span>'
+apiVersion: '1.0'
+service: Kaizala
+operations:
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.getallwebhooks
+    summary: |-
+      <span data-ttu-id="39e49-106">Abrufen Sie aller Webhooks auf eine Gruppe</span><span class="sxs-lookup"><span data-stu-id="39e49-106">Get all webhooks on a group</span></span>  
+      <span data-ttu-id="39e49-107">Diese API gibt alle Webhooks für eine Gruppe</span><span class="sxs-lookup"><span data-stu-id="39e49-107">This API returns all webhooks on a group</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.subscribetoallevents
+    summary: <span data-ttu-id="39e49-108">Abonnieren Sie alle Ereignisse auf Aktionsebene</span><span class="sxs-lookup"><span data-stu-id="39e49-108">Subscribe to all events at action level</span></span>
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.unsubscribingawebhook
+    summary: |-
+      <span data-ttu-id="39e49-109">Kündigen des Abonnements awebhook</span><span class="sxs-lookup"><span data-stu-id="39e49-109">Unsubscribing awebhook</span></span>  
+      <span data-ttu-id="39e49-110">Ein Webhook aufheben</span><span class="sxs-lookup"><span data-stu-id="39e49-110">Unsubscribing a webhook</span></span>

@@ -1,0 +1,101 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postcustomactionsubscriber
+name: Post Custom Action Subscriber
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: '1.0'
+summary: |-
+  <span data-ttu-id="745d9-101">Erstellen von benutzerdefinierten Aktion für Abonnenten in einer öffentlichen Gruppe</span><span class="sxs-lookup"><span data-stu-id="745d9-101">Post custom action to subscriber(s) in a public group</span></span>  
+  <span data-ttu-id="745d9-102">Diese API können Sie eine benutzerdefinierte Aktion Subscibers in einer öffentlichen Gruppe buchen</span><span class="sxs-lookup"><span data-stu-id="745d9-102">This API lets you post a custom action to subscibers in a public group</span></span>
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://{endpoint-url}/v1/groups/{test-public-group-id}/actions'
+uriParameters:
+  - name: test-public-group-id
+    in: path
+    isRequired: true
+    description: <span data-ttu-id="745d9-103">Der angegebene öffentliche Gruppe zugeordnete GUID</span><span class="sxs-lookup"><span data-stu-id="745d9-103">GUID associated with the given public group</span></span>
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: id
+        in: body
+        isRequired: true
+        description: <span data-ttu-id="745d9-104">Aktion-Paket-id</span><span class="sxs-lookup"><span data-stu-id="745d9-104">Action Package id</span></span>
+        types:
+          - uid: string
+      - name: actionBody
+        in: body
+        isRequired: true
+        description: '<span data-ttu-id="745d9-105">Benutzerdefinierte Aktion, die an einen Abonnenten gesendet werden.</span><span class="sxs-lookup"><span data-stu-id="745d9-105">Custom Action sent to a subscriber</span></span>'
+        types:
+          - uid: SubscribersCustomActionBody
+      - name: subscribers
+        in: body
+        isRequired: true
+        description: ''
+        types:
+          - uid: string
+            isArray: true
+      - name: sendToAllSubscribers
+        in: body
+        isRequired: true
+        description: ''
+        types:
+          - uid: boolean
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="745d9-106">Access Token vom Auth Endpunkt</span><span class="sxs-lookup"><span data-stu-id="745d9-106">Access Token received from the auth end-point</span></span>
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="745d9-107">application/json</span><span class="sxs-lookup"><span data-stu-id="745d9-107">application/json</span></span>
+    types:
+      - uid: string
+definitions:
+  - name: SubscribersCustomActionBody
+    description: '<span data-ttu-id="745d9-108">Benutzerdefinierte Aktion, die an einen Abonnenten gesendet werden.</span><span class="sxs-lookup"><span data-stu-id="745d9-108">Custom Action sent to a subscriber</span></span>'
+    kind: object
+    properties:
+      - name: title
+        description: <span data-ttu-id="745d9-109">Titel</span><span class="sxs-lookup"><span data-stu-id="745d9-109">Title</span></span>
+        types:
+          - uid: string
+      - name: validity
+        description: <span data-ttu-id="745d9-110">Gültigkeit</span><span class="sxs-lookup"><span data-stu-id="745d9-110">Validity</span></span>
+        types:
+          - uid: integer
+  - name: Request - Send Custom Action To Subscriber(s)
+    description: <span data-ttu-id="745d9-111">Erstellen von benutzerdefinierten Aktion für Abonnenten in einer öffentlichen Gruppe</span><span class="sxs-lookup"><span data-stu-id="745d9-111">Post custom action to subscriber(s) in a public group</span></span>
+    kind: object
+    properties:
+      - name: id
+        description: <span data-ttu-id="745d9-112">Aktion-Paket-id</span><span class="sxs-lookup"><span data-stu-id="745d9-112">Action Package id</span></span>
+        types:
+          - uid: string
+      - name: actionBody
+        description: '<span data-ttu-id="745d9-113">Benutzerdefinierte Aktion, die an einen Abonnenten gesendet werden.</span><span class="sxs-lookup"><span data-stu-id="745d9-113">Custom Action sent to a subscriber</span></span>'
+        types:
+          - uid: SubscribersCustomActionBody
+      - name: subscribers
+        description: ''
+        types:
+          - uid: string
+            isArray: true
+      - name: sendToAllSubscribers
+        description: ''
+        types:
+          - uid: boolean
+examples: []
+security: []

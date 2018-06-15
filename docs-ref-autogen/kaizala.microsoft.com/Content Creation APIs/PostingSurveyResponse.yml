@@ -1,0 +1,122 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingsurveyresponse
+name: Posting Survey Response
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: '1.0'
+summary: |-
+  <span data-ttu-id="b6d1e-101">Bereitstellen einer Antwort auf eine Umfrage</span><span class="sxs-lookup"><span data-stu-id="b6d1e-101">Posting a response to a survey</span></span>  
+  <span data-ttu-id="b6d1e-102">Diese API können Sie die Antwort auf einer bestimmten Umfrage teilnehmen buchen</span><span class="sxs-lookup"><span data-stu-id="b6d1e-102">This API lets you post a response to a given survey</span></span>
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-survey-id}/responses'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: <span data-ttu-id="b6d1e-103">GUID der angegebenen Gruppe zugeordnet</span><span class="sxs-lookup"><span data-stu-id="b6d1e-103">GUID associated with the given group</span></span>
+    types:
+      - uid: string
+  - name: test-survey-id
+    in: path
+    isRequired: true
+    description: ''
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: actionType
+        in: body
+        isRequired: true
+        description: <span data-ttu-id="b6d1e-104">Typ der Aktion</span><span class="sxs-lookup"><span data-stu-id="b6d1e-104">Type of action</span></span>
+        types:
+          - uid: string
+      - name: actionBody
+        in: body
+        isRequired: true
+        description: <span data-ttu-id="b6d1e-105">Umfrage Aktion Textkörper</span><span class="sxs-lookup"><span data-stu-id="b6d1e-105">Survey Action Body</span></span>
+        types:
+          - uid: SurveyActionBody
+requestHeader:
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="b6d1e-106">application/json</span><span class="sxs-lookup"><span data-stu-id="b6d1e-106">application/json</span></span>
+    types:
+      - uid: string
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="b6d1e-107">Access Token vom Auth Endpunkt</span><span class="sxs-lookup"><span data-stu-id="b6d1e-107">Access Token received from the auth end-point</span></span>
+    types:
+      - uid: string
+definitions:
+  - name: SurveyActionBody
+    description: <span data-ttu-id="b6d1e-108">Umfrage Aktion Textkörper</span><span class="sxs-lookup"><span data-stu-id="b6d1e-108">Survey Action Body</span></span>
+    kind: object
+    properties:
+      - name: responseName
+        description: <span data-ttu-id="b6d1e-109">Name der Antwort</span><span class="sxs-lookup"><span data-stu-id="b6d1e-109">Name of the response</span></span>
+        types:
+          - uid: string
+      - name: responseLocation
+        description: <span data-ttu-id="b6d1e-110">ResponseLocation</span><span class="sxs-lookup"><span data-stu-id="b6d1e-110">ResponseLocation</span></span>
+        types:
+          - uid: ResponseLocation
+      - name: Answers
+        description: <span data-ttu-id="b6d1e-111">Antwort</span><span class="sxs-lookup"><span data-stu-id="b6d1e-111">Answer</span></span>
+        types:
+          - uid: Answer
+            isArray: true
+  - name: Request - PostingAResponseToASurvey
+    description: <span data-ttu-id="b6d1e-112">Bereitstellen einer Antwort auf eine Umfrage</span><span class="sxs-lookup"><span data-stu-id="b6d1e-112">Posting a response to a survey</span></span>
+    kind: object
+    properties:
+      - name: actionType
+        description: <span data-ttu-id="b6d1e-113">Typ der Aktion</span><span class="sxs-lookup"><span data-stu-id="b6d1e-113">Type of action</span></span>
+        types:
+          - uid: string
+      - name: actionBody
+        description: <span data-ttu-id="b6d1e-114">Umfrage Aktion Textkörper</span><span class="sxs-lookup"><span data-stu-id="b6d1e-114">Survey Action Body</span></span>
+        types:
+          - uid: SurveyActionBody
+  - name: ResponseLocation
+    description: <span data-ttu-id="b6d1e-115">ResponseLocation</span><span class="sxs-lookup"><span data-stu-id="b6d1e-115">ResponseLocation</span></span>
+    kind: object
+    properties:
+      - name: latitude
+        description: <span data-ttu-id="b6d1e-116">Breitengradkoordinaten für den Speicherort</span><span class="sxs-lookup"><span data-stu-id="b6d1e-116">Latitude coordinates for the location</span></span>
+        types:
+          - uid: integer
+      - name: longitude
+        description: <span data-ttu-id="b6d1e-117">Längengradkoordinaten für den Speicherort</span><span class="sxs-lookup"><span data-stu-id="b6d1e-117">Longitude coordinates for the location</span></span>
+        types:
+          - uid: integer
+      - name: name
+        description: '<span data-ttu-id="b6d1e-118">Name der Stelle, auf die Koordinaten Speicherort entspricht</span><span class="sxs-lookup"><span data-stu-id="b6d1e-118">Name of the Place that Location co-ordinates corresponds to</span></span>'
+        types:
+          - uid: string
+  - name: Answer
+    description: <span data-ttu-id="b6d1e-119">Antwort</span><span class="sxs-lookup"><span data-stu-id="b6d1e-119">Answer</span></span>
+    kind: object
+    properties:
+      - name: lt
+        description: <span data-ttu-id="b6d1e-120">Breitengradkoordinaten für den Speicherort</span><span class="sxs-lookup"><span data-stu-id="b6d1e-120">Latitude coordinates for the location</span></span>
+        types:
+          - uid: integer
+      - name: lg
+        description: <span data-ttu-id="b6d1e-121">Längengradkoordinaten für den Speicherort</span><span class="sxs-lookup"><span data-stu-id="b6d1e-121">Longitude coordinates for the location</span></span>
+        types:
+          - uid: integer
+      - name: 'n'
+        description: ''
+        types:
+          - uid: string
+examples: []
+security: []

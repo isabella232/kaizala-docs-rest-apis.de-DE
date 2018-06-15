@@ -1,0 +1,41 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.getallwebhooks
+name: Get All Webhooks
+service: Kaizala
+groupName: Subscription Webhooks
+apiVersion: '1.0'
+summary: |-
+  <span data-ttu-id="d7767-101">Abrufen Sie aller Webhooks auf eine Gruppe</span><span class="sxs-lookup"><span data-stu-id="d7767-101">Get all webhooks on a group</span></span>  
+  <span data-ttu-id="d7767-102">Diese API gibt alle Webhooks für eine Gruppe</span><span class="sxs-lookup"><span data-stu-id="d7767-102">This API returns all webhooks on a group</span></span>
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'GET https://{endpoint-url}/v1/webhook?objectId={objectId}&objectType={objectType}'
+uriParameters:
+  - name: objectId
+    in: query
+    isRequired: true
+    description: '<span data-ttu-id="d7767-103">Bezeichner, die für das Objekt, in welchen, das Kontext die Webhooks erstellt werden müssen. Für ObjectType = Gruppe, dessen Gruppenbezeichner für ObjectType = Action, dessen ActionId für ObjectType = ActionPackage, dessen Action-Paket-Id</span><span class="sxs-lookup"><span data-stu-id="d7767-103">Identifier representing the object in which context the webhooks need to be created.For ObjectType=Group, its group''s Identifier, For ObjectType=Action, its actionId, For ObjectType=ActionPackage, its action-package-id</span></span>'
+    types:
+      - uid: string
+  - name: objectType
+    in: query
+    isRequired: true
+    description: '<span data-ttu-id="d7767-104">Enum: Gruppe/Aktion/ActionPackage</span><span class="sxs-lookup"><span data-stu-id="d7767-104">Enum: Group/Action/ActionPackage</span></span>'
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="d7767-105">Access Token vom Auth Endpunkt</span><span class="sxs-lookup"><span data-stu-id="d7767-105">Access Token received from the auth end-point</span></span>
+    types:
+      - uid: string
+definitions: []
+examples: []
+security: []

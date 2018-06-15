@@ -1,0 +1,79 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendmessagetosubscriber
+name: Send Message To Subscriber
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: '1.0'
+summary: |-
+  <span data-ttu-id="c4399-101">Senden Sie Nachricht an Abonnenten in einer öffentlichen Gruppe</span><span class="sxs-lookup"><span data-stu-id="c4399-101">Send message to subscriber(s) in a public group</span></span>  
+  <span data-ttu-id="c4399-102">Diese API können Sie eine Nachricht an Abonnenten in einer öffentlichen Gruppe senden</span><span class="sxs-lookup"><span data-stu-id="c4399-102">This API lets you send a message to subscribers in a public group</span></span>
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://api.kaiza.la/v1/groups/{test-public-group-id}/messages'
+uriParameters:
+  - name: test-public-group-id
+    in: path
+    isRequired: true
+    description: ''
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: Message
+        in: body
+        isRequired: true
+        description: <span data-ttu-id="c4399-103">Textnachricht (Max 1.000 Zeichen begrenzt) gesendet werden</span><span class="sxs-lookup"><span data-stu-id="c4399-103">Text message to be sent (Max limit of 1000 Characters)</span></span>
+        types:
+          - uid: string
+      - name: subscribers
+        in: body
+        isRequired: true
+        description: <span data-ttu-id="c4399-104">Jedes Element entspricht einer Mobiltelefonnummer (mit Ländercode.</span><span class="sxs-lookup"><span data-stu-id="c4399-104">Each element corresponds to a mobile number(with country code.</span></span> <span data-ttu-id="c4399-105">EG.</span><span class="sxs-lookup"><span data-stu-id="c4399-105">Eg.</span></span> <span data-ttu-id="c4399-106">+911999999999).</span><span class="sxs-lookup"><span data-stu-id="c4399-106">+911999999999).</span></span> <span data-ttu-id="c4399-107">Textnachricht wird nur für die ausgewählten Abonnenten gesendet werden.</span><span class="sxs-lookup"><span data-stu-id="c4399-107">Text message will be sent only to the selected subscribers.</span></span> <span data-ttu-id="c4399-108">Für selektive Kommunikation für Abonnenten im Kontext eines öffentliche Gruppe verwendet werden soll</span><span class="sxs-lookup"><span data-stu-id="c4399-108">To be used for selective communication to subscribers in context of a Public Group</span></span>
+        types:
+          - uid: string
+            isArray: true
+      - name: sendToAllSubscribers
+        in: body
+        isRequired: true
+        description: '<span data-ttu-id="c4399-109">Standard: false.</span><span class="sxs-lookup"><span data-stu-id="c4399-109">Default: false.</span></span> <span data-ttu-id="c4399-110">Gültige nur im Fall der GroupId öffentliche Gruppe gehört.</span><span class="sxs-lookup"><span data-stu-id="c4399-110">Valid only in case the groupId belongs to a Public Group.</span></span> <span data-ttu-id="c4399-111">True, um die Text-Nachricht an alle Abonnenten senden bewirkt, dass die das Token Benutzer Admin der Gruppe der öffentlich sein</span><span class="sxs-lookup"><span data-stu-id="c4399-111">True to send the text message to all subscribers which requires the token''s user to be admin of the Public Group</span></span>'
+        types:
+          - uid: boolean
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="c4399-112">Access Token vom Auth Endpunkt</span><span class="sxs-lookup"><span data-stu-id="c4399-112">Access Token received from the auth end-point</span></span>
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="c4399-113">application/json</span><span class="sxs-lookup"><span data-stu-id="c4399-113">application/json</span></span>
+    types:
+      - uid: string
+definitions:
+  - name: Request - SendMessageToSubscriber(s)InAPublicGroup
+    description: <span data-ttu-id="c4399-114">Senden Sie Nachricht an Abonnenten in einer öffentlichen Gruppe</span><span class="sxs-lookup"><span data-stu-id="c4399-114">Send message to subscriber(s) in a public group</span></span>
+    kind: object
+    properties:
+      - name: Message
+        description: <span data-ttu-id="c4399-115">Textnachricht (Max 1.000 Zeichen begrenzt) gesendet werden</span><span class="sxs-lookup"><span data-stu-id="c4399-115">Text message to be sent (Max limit of 1000 Characters)</span></span>
+        types:
+          - uid: string
+      - name: subscribers
+        description: <span data-ttu-id="c4399-116">Jedes Element entspricht einer Mobiltelefonnummer (mit Ländercode.</span><span class="sxs-lookup"><span data-stu-id="c4399-116">Each element corresponds to a mobile number(with country code.</span></span> <span data-ttu-id="c4399-117">EG.</span><span class="sxs-lookup"><span data-stu-id="c4399-117">Eg.</span></span> <span data-ttu-id="c4399-118">+911999999999).</span><span class="sxs-lookup"><span data-stu-id="c4399-118">+911999999999).</span></span> <span data-ttu-id="c4399-119">Textnachricht wird nur für die ausgewählten Abonnenten gesendet werden.</span><span class="sxs-lookup"><span data-stu-id="c4399-119">Text message will be sent only to the selected subscribers.</span></span> <span data-ttu-id="c4399-120">Für selektive Kommunikation für Abonnenten im Kontext eines öffentliche Gruppe verwendet werden soll</span><span class="sxs-lookup"><span data-stu-id="c4399-120">To be used for selective communication to subscribers in context of a Public Group</span></span>
+        types:
+          - uid: string
+            isArray: true
+      - name: sendToAllSubscribers
+        description: '<span data-ttu-id="c4399-121">Standard: false.</span><span class="sxs-lookup"><span data-stu-id="c4399-121">Default: false.</span></span> <span data-ttu-id="c4399-122">Gültige nur im Fall der GroupId öffentliche Gruppe gehört.</span><span class="sxs-lookup"><span data-stu-id="c4399-122">Valid only in case the groupId belongs to a Public Group.</span></span> <span data-ttu-id="c4399-123">True, um die Text-Nachricht an alle Abonnenten senden bewirkt, dass die das Token Benutzer Admin der Gruppe der öffentlich sein</span><span class="sxs-lookup"><span data-stu-id="c4399-123">True to send the text message to all subscribers which requires the token''s user to be admin of the Public Group</span></span>'
+        types:
+          - uid: boolean
+examples: []
+security: []

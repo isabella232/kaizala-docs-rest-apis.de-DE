@@ -1,0 +1,47 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis.fetchingsurveyresponses
+name: Fetching Survey Responses
+service: Kaizala
+groupName: Content Query APIs
+apiVersion: '1.0'
+summary: |-
+  <span data-ttu-id="aece5-101">Abrufen von Umfrageantworten</span><span class="sxs-lookup"><span data-stu-id="aece5-101">Fetching survey responses</span></span>  
+  <span data-ttu-id="aece5-102">Diese API können Sie die Antworten für eine Umfrage abrufen</span><span class="sxs-lookup"><span data-stu-id="aece5-102">This API lets you fetch responses for a survey</span></span>
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'GET https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-survey-id}?getDetails={getDetails}'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: <span data-ttu-id="aece5-103">GUID der angegebenen Gruppe zugeordnet</span><span class="sxs-lookup"><span data-stu-id="aece5-103">GUID associated with the given group</span></span>
+    types:
+      - uid: string
+  - name: test-survey-id
+    in: path
+    isRequired: true
+    description: <span data-ttu-id="aece5-104">Die angegebene Umfrage zugeordnete GUID</span><span class="sxs-lookup"><span data-stu-id="aece5-104">GUID associated with the given survey</span></span>
+    types:
+      - uid: string
+  - name: getDetails
+    in: query
+    isRequired: true
+    description: ''
+    types:
+      - uid: boolean
+responses:
+  - name: 200 OK
+    description: ''
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: <span data-ttu-id="aece5-105">Access Token vom Auth Endpunkt</span><span class="sxs-lookup"><span data-stu-id="aece5-105">Access Token received from the auth end-point</span></span>
+    types:
+      - uid: string
+definitions: []
+examples: []
+security: []
