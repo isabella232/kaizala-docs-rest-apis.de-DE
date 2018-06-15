@@ -1,0 +1,73 @@
+{
+  "build": {
+    "content": [{
+        "src": "docs-ref-autogen",
+        "files": [
+          "**.yml"
+        ],
+        "exclude": [],
+        "dest": "api"
+      },
+      {
+        "src": "docs-ref-autogen",
+        "files": [
+          "toc.md"
+        ],
+        "exclude": [],
+        "dest": "api/kaizala.microsoft.com"
+      },
+      {
+        "src": "docs-ref-index",
+        "files": [
+          "**.md"
+        ],
+        "exclude": [],
+        "dest": "kaizala"
+      },
+      {
+        "files": [
+          "*.md",
+          "toc.yml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "rest/**"
+        ]
+      },
+      {
+        "files": [
+          "breadcrumb/toc.yml"
+        ]
+      }
+    ],
+    "resource": [{
+      "files": [
+        "**/*.png",
+        "**/*.jpg"
+      ],
+      "exclude": [
+        "**/obj/**",
+        "**/includes/**"
+      ]
+    }],
+    "overwrite": [],
+    "externalReference": [],
+    "globalMetadata": {
+      "rest_product": "Kaizala",
+      "titleSuffix": "Kaizala REST API",
+      "author": "",
+      "ms.author": "",
+      "ms.manager": "",
+      "ms.topic": "",
+      "ms.prod": "kaizala",
+      "ms.devlang": "rest-api"
+    },
+    "fileMetadata": {
+      "searchScope": {
+        "docs-ref-autogen/**.yml": ["Kaizala", "REST"]
+      }
+    },
+    "template": [],
+    "dest": "kaizala-rest-api"
+  }
+}
