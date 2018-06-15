@@ -1,0 +1,118 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchsubgroup
+name: Fetch Subgroup
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: |-
+  Diese API wird verwendet, um einer Gruppe Untergruppen abrufen  
+   Abrufen von Untergruppen einer Gruppe
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'GET https://{endpoint-url}/v1/groups/{test-group-id}/subGroups'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: GUID der angegebenen Gruppe zugeordnet
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+    types:
+      - uid: Response - Fetch subGroup of a group
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Access Token vom Auth Endpunkt
+    types:
+      - uid: string
+definitions:
+  - name: Response - Fetch subGroup of a group
+    description: Abrufen von Sub-group(s) für eine Gruppe
+    kind: object
+    properties:
+      - name: groupName
+        description: Der Name der Gruppe
+        types:
+          - uid: string
+      - name: groupId
+        description: GUID der Gruppe zugeordnete
+        types:
+          - uid: string
+      - name: groupImageUrl
+        description: 'Zeichenfolge, die die URL des Bilds Profil Gruppe angibt. '
+        types:
+          - uid: string
+      - name: hasSubGroups
+        description: 'Gibt True, wenn die Gruppe Untergruppen besitzt.'
+        types:
+          - uid: boolean
+      - name: hasParentGroups
+        description: 'Gibt True, wenn die Gruppe verfügt über die übergeordneten Gruppen'
+        types:
+          - uid: boolean
+      - name: isMappedToTenant
+        description: 'Gibt True, wenn die Gruppe als Organisation Gruppe zugeordnet ist'
+        types:
+          - uid: boolean
+      - name: groupType
+        description: Gruppe / Gruppe verbinden. Connect-Gruppe bezieht sich auf verwaltete öffentliche Gruppe.
+        types:
+          - uid: string
+      - name: subGroups
+        description: 'Array von Untergruppen, dass die angegebene Gruppe hat'
+        types:
+          - uid: SubGroup
+            isArray: true
+      - name: welcomeMessage
+        description: 'Willkommensnachricht, die neue Joinees in der Gruppe angezeigt werden'
+        types:
+          - uid: string
+  - name: SubGroup
+    description: Untergruppe
+    kind: object
+    properties:
+      - name: groupName
+        description: Der Name der Gruppe
+        types:
+          - uid: string
+      - name: groupId
+        description: GUID der Gruppe zugeordnete
+        types:
+          - uid: string
+      - name: groupImageUrl
+        description: 'Zeichenfolge, die die URL des Bilds Profil Gruppe angibt. '
+        types:
+          - uid: string
+      - name: hasSubGroups
+        description: 'Gibt True, wenn die Gruppe Untergruppen besitzt.'
+        types:
+          - uid: boolean
+      - name: hasParentGroups
+        description: 'Gibt True, wenn die Gruppe verfügt über die übergeordneten Gruppen'
+        types:
+          - uid: boolean
+      - name: isMappedToTenant
+        description: 'Gibt True, wenn die Gruppe als Organisation Gruppe zugeordnet ist'
+        types:
+          - uid: boolean
+      - name: groupType
+        description: Gruppe / Gruppe verbinden. Connect-Gruppe bezieht sich auf verwaltete öffentliche Gruppe.
+        types:
+          - uid: string
+      - name: isDuplicate
+        description: 'Gibt True zurück, wenn angegeben, dass Groupid bereits vorhanden ist.'
+        types:
+          - uid: boolean
+      - name: welcomeMessage
+        description: 'Willkommensnachricht, die neue Joinees in der Gruppe angezeigt werden '
+        types:
+          - uid: string
+examples: []
+security: []

@@ -1,0 +1,92 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.createsubgroup
+name: Create Subgroup
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: |-
+  Erstellen Sie eine Sub-Gruppe  
+  API zum Erstellen einer Gruppe.
+  Optionale Parameter: Mitglieder: Zeichenfolgenarray. Jede Zeichenfolge ist Mobiltelefonnummer (mit Ländercode). Max Zeichenfolgen-100
+      
+      GroupType: Group/ConnectGroup. ConnectGroup for Managed public group.
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://{endpoint-url}/v1/groups/{test-group-id}/subgroups'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: GUID der angegebenen Gruppe zugeordnet
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: name
+        in: body
+        isRequired: true
+        description: Gruppenname
+        types:
+          - uid: string
+      - name: welcomeMessage
+        in: body
+        isRequired: true
+        description: Willkommensnachricht das neue Mitglied der Gruppe angezeigt wird
+        types:
+          - uid: string
+      - name: members
+        in: body
+        isRequired: true
+        description: 'Die Mobiltelefonnummer (mit Ländercode) Mitglieder hinzugefügt werden soll. Standard: Zugangs-Token Benutzer wird als Administrator der Gruppe hinzugefügt werden'
+        types:
+          - uid: string
+            isArray: true
+      - name: groupType
+        in: body
+        isRequired: true
+        description: 'Enum: Gruppe/ConnectGroup. ConnectGroup werden verwaltete öffentliche Gruppe erstellen. Standard: Gruppe'
+        types:
+          - uid: string
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Access Token vom Auth Endpunkt
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+definitions:
+  - name: Request - Create a managed public group
+    description: Erstellen einer verwalteten öffentlichen Gruppe
+    kind: object
+    properties:
+      - name: name
+        description: Gruppenname
+        types:
+          - uid: string
+      - name: welcomeMessage
+        description: Willkommensnachricht das neue Mitglied der Gruppe angezeigt wird
+        types:
+          - uid: string
+      - name: members
+        description: 'Die Mobiltelefonnummer (mit Ländercode) Mitglieder hinzugefügt werden soll. Standard: Zugangs-Token Benutzer wird als Administrator der Gruppe hinzugefügt werden'
+        types:
+          - uid: string
+            isArray: true
+      - name: groupType
+        description: 'Enum: Gruppe/ConnectGroup. ConnectGroup werden verwaltete öffentliche Gruppe erstellen. Standard: Gruppe'
+        types:
+          - uid: string
+examples: []
+security: []

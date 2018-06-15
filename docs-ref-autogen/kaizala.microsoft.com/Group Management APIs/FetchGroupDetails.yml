@@ -1,0 +1,41 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchgroupdetails
+name: Fetch Group Details
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: |-
+  Gruppendetails abrufen  
+  Diese API kann verwendet werden, zum Abrufen von Informationen für eine Gruppe
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'GET https://{endpoint-url}/v1/groups/{test-group-id}'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: GUID der angegebenen Gruppe zugeordnet
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestHeader:
+  - name: applicationId
+    in: header
+    isRequired: true
+    description: ID der Connector zugeordnet
+    types:
+      - uid: string
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Access Token vom Auth Endpunkt
+    types:
+      - uid: string
+definitions: []
+examples: []
+security: []

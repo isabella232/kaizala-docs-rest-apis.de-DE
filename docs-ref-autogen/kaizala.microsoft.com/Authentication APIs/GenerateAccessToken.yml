@@ -1,0 +1,63 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
+name: Generate Access Token
+service: Kaizala
+groupName: Authentication APIs
+apiVersion: '1.0'
+summary: |-
+  Das Zugriffstoken abzurufen  
+  Diese API generiert Zugriffstoken, um Kaizala-Ressourcen zugreifen, wenn Aktualisierungstoken, Application/Connector-Id und geheimen Schlüssel Application/Connector bereitgestellt wird
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'GET https://api.kaiza.la/v1/accessToken'
+uriParameters: []
+responses:
+  - name: 200 OK
+    description: ''
+    types:
+      - uid: Response - Access Token
+requestHeader:
+  - name: applicationId
+    in: header
+    isRequired: true
+    description: ID der Connector zugeordnet
+    types:
+      - uid: string
+  - name: applicationSecret
+    in: header
+    isRequired: true
+    description: Der Connector zugeordneten geheimen Schlüssel
+    types:
+      - uid: string
+  - name: refreshToken
+    in: header
+    isRequired: true
+    description: Wenn der jeweilige Connector Zugriff auf die Gruppe gewährt wurde durch die Kaizala Gruppe Admin freigegeben refreshToken
+    types:
+      - uid: string
+definitions:
+  - name: Response - Access Token
+    description: Das Zugriffstoken abzurufen
+    kind: object
+    properties:
+      - name: accessToken
+        description: Access Token vom Auth Endpunkt
+        types:
+          - uid: string
+      - name: endpointUrl
+        description: 'Erfolgreiche Auth ist eine Endpunkt-Url zurückgegeben, für nachfolgende API-Aufrufe, die als api-Basis-Url verwendet werden sollten'
+        types:
+          - uid: string
+      - name: accessTokenExpiry
+        description: Es gibt die Ablaufzeit für AccessToken in Epoche time(milliseconds) an.
+        types:
+          - uid: integer
+      - name: scope
+        description: 'Umfang der Berechtigungen auf Kaizala Ressourcen, in denen der Zugriff gewährt Token enthält.'
+        types:
+          - uid: string
+examples: []
+security: []

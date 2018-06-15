@@ -1,0 +1,35 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis
+name: Content Creation APIs
+summary: 'API-Endpunkt Unterhaltungsgruppen innerhalb Kaizala Instanzen von Kaizala Aktionen an. <br /> Aktuellen Bereich besteht darin, folgende Aktivitätstypen unterstützen: <Table>  <tr><th> Aktion </th> <th>POST unterstützt. </th><th> Id </th></tr> <tr><td> Bild Anlage </td> <td> Ja </td> <td>  Abbildung  </td></tr> <tr><td> Audio-Anlage </td> <td> Ja </td> <td>  audio  </td></tr> <tr><td> Dokument-Anlage </td> <td> Ja </td>  <td>  document  </td></tr> <tr><td> Kontakt in der Anlage </td> <td> Nein </td> <td>  n/v  </td></tr> <tr><td> Auftrag </td> <td> Ja </td>  <td>  Auftrag  </td></tr> <tr><td> Umfrage </td> <td> Ja </td> <td>  Umfrage  </td></tr> <tr><td> Foto mit Speicherort </td> <td> Nein </td> <td>  photoWithLocation  </td></tr> <tr><td> Treffen wir uns </td> <td> Ja </td> <td>  LetsMeet  </td></tr> <tr><td> Schnelle Umfrage </td> <td> Ja </td> <td>  Umfrage  </td></tr> <tr><td> Speicherort freigeben </td> <td> Nein </td> <td>  shareLocation  </td></tr> <tr><td> Speicherort der Anforderung </td> <td> Nein </td> <td>  n/v  </td></tr> <tr><td> Live-Speicherort </td> <td> Nein </td> <td>  n/v  </td></tr> <tr><td> Announcement </td> <td> Ja </td> <td>  Announcement  </td></tr> </Table> '
+apiVersion: '1.0'
+service: Kaizala
+operations:
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postcustomactionsubscriber
+    summary: |-
+      Erstellen von benutzerdefinierten Aktion für Abonnenten in einer öffentlichen Gruppe  
+      Diese API können Sie eine benutzerdefinierte Aktion Subscibers in einer öffentlichen Gruppe buchen
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingactionresponse
+    summary: |-
+      Bereitstellen einer Antwort auf eine Aktion  
+      Diese API können Sie die Antwort auf eine Aktion buchen
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingsurveyresponse
+    summary: |-
+      Bereitstellen einer Antwort auf eine Umfrage  
+      Diese API können Sie die Antwort auf einer bestimmten Umfrage teilnehmen buchen
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendmessage
+    summary: |-
+      Senden der Nachricht für eine Gruppe  
+      Senden Sie eine Nachricht für eine Gruppe
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendmessagetosubscriber
+    summary: |-
+      Senden Sie Nachricht an Abonnenten in einer öffentlichen Gruppe  
+      Diese API können Sie eine Nachricht an Abonnenten in einer öffentlichen Gruppe senden
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendsurvey
+    summary: |-
+      Umfrage zu einer Gruppe senden  
+      Diese API ermöglicht das Erstellen einer Umfrage und für eine Gruppe senden
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.uploadmedia
+    summary: |-
+      Medien hochladen  
+      Diese API hochgeladen Medien (Bild, Dokument, Audio, Album oder Video)

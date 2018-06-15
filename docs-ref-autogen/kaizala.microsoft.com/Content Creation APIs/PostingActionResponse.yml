@@ -1,0 +1,105 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingactionresponse
+name: Posting Action Response
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: '1.0'
+summary: |-
+  Bereitstellen einer Antwort auf eine Aktion  
+  Diese API können Sie die Antwort auf eine Aktion buchen
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-action-id}/responses'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: GUID der angegebenen Gruppe zugeordnet
+    types:
+      - uid: string
+  - name: test-action-id
+    in: path
+    isRequired: true
+    description: 'GUID, die angegebene Aktion zugeordnet'
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: id
+        in: body
+        isRequired: true
+        description: ID der Aktion-Instanz zugeordnet
+        types:
+          - uid: string
+      - name: actionBody
+        in: body
+        isRequired: true
+        description: |-
+          Aktion Textkörper  
+          Ein Objekt, für die entsprechende Aktion erforderliche Daten darstellt. Parameter würde entsprechend der verschiedenen Aktionstyp variieren.
+        types:
+          - uid: Request - Action Body
+      - name: responseId
+        in: body
+        description: Zum Aktualisieren der vorhandenen Antwort
+        types:
+          - uid: string
+      - name: actionType
+        in: body
+        isRequired: true
+        description: 'Enumerationswerte: Umfrage/Auftrag. Entweder ActionType oder Id muss angegeben werden'
+        types:
+          - uid: string
+requestHeader:
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Access Token vom Auth Endpunkt
+    types:
+      - uid: string
+definitions:
+  - name: Request - Action Body
+    description: Aktion Textkörper
+    kind: object
+    properties:
+      - name: Answers
+        description: Array von Elementen für die angegebene Aktion Antwort.
+        types:
+          - uid: string
+            isArray: true
+  - name: Request - PostingAResponseToAnAction
+    description: Bereitstellen einer Antwort auf eine Aktion
+    kind: object
+    properties:
+      - name: id
+        description: ID der Aktion-Instanz zugeordnet
+        types:
+          - uid: string
+      - name: actionBody
+        description: |-
+          Aktion Textkörper  
+          Ein Objekt, für die entsprechende Aktion erforderliche Daten darstellt. Parameter würde entsprechend der verschiedenen Aktionstyp variieren.
+        types:
+          - uid: Request - Action Body
+      - name: responseId
+        description: Zum Aktualisieren der vorhandenen Antwort
+        types:
+          - uid: string
+      - name: actionType
+        description: 'Enumerationswerte: Umfrage/Auftrag. Entweder ActionType oder Id muss angegeben werden'
+        types:
+          - uid: string
+examples: []
+security: []

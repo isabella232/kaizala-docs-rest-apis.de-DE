@@ -1,0 +1,59 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubscribers
+name: Add Subscribers
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: |-
+  Hinzufügen von Abonnenten an eine öffentliche Gruppe  
+  Diese API fügt Abonnenten an eine öffentliche Gruppe
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'PUT https://{endpoint-url}/v1/groups/{test-public-group-id}/subscribers/add'
+uriParameters:
+  - name: test-public-group-id
+    in: path
+    isRequired: true
+    description: ''
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: subscribers
+        in: body
+        isRequired: true
+        description: Liste der mobilen Teilnehmernummer mit Ländercode
+        types:
+          - uid: string
+            isArray: true
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Access Token vom Auth Endpunkt
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+definitions:
+  - name: Request - Remove subscribers
+    description: Entfernen von Abonnenten aus einer öffentlichen Gruppe
+    kind: object
+    properties:
+      - name: subscribers
+        description: Liste der mobilen Teilnehmernummer mit Ländercode
+        types:
+          - uid: string
+            isArray: true
+examples: []
+security: []

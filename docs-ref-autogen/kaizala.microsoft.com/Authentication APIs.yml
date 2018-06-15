@@ -1,0 +1,19 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis
+name: Authentication APIs
+summary: Diese APIs können Sie den Zugriff für 3. Partei Systeme zur Interaktion mit Kaizala-API-Plattform. Kaizala implementiert benutzerdefinierte token basierend Autorisierungsmechanismus. Dieser Mechanismus wird das Konzept der Aktualisierung und Zugriffstoken zum Verwalten der Autorisierung für die Kaizala-Plattform-APIs verwendet. / n
+apiVersion: '1.0'
+service: Kaizala
+operations:
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
+    summary: |-
+      Das Zugriffstoken abzurufen  
+      Diese API generiert Zugriffstoken, um Kaizala-Ressourcen zugreifen, wenn Aktualisierungstoken, Application/Connector-Id und geheimen Schlüssel Application/Connector bereitgestellt wird
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generatepin
+    summary: |-
+      Einmalige PIN generieren  
+      Diese API einmalig PIN für eine Mobiltelefonnummer generiert, wenn Application/Connector-Id angegeben wird.
+  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.getrefreshtoken
+    summary: |-
+      Melden Sie sich mit Pin und ApplicationId Refresh token abrufen  
+      Diese API Aktualisierungstoken für die angegebene Anwendung/Connector-Id generiert, wenn Pin, Mobiltelefonnummer & Id Application/Connector wird bereitgestellt.

@@ -1,0 +1,31 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generatepin
+name: Generate Pin
+service: Kaizala
+groupName: Authentication APIs
+apiVersion: '1.0'
+summary: |-
+  Einmalige PIN generieren  
+  Diese API einmalig PIN für eine Mobiltelefonnummer generiert, wenn Application/Connector-Id angegeben wird.
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://api.kaiza.la/v1/generatePin'
+uriParameters: []
+responses:
+  - name: 200 OK
+    description: ''
+    types:
+      - uid: object
+requestHeader:
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+definitions: []
+examples: []
+security: []

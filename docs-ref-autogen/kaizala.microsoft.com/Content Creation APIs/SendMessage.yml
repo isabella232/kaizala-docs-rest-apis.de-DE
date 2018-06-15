@@ -1,0 +1,57 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendmessage
+name: Send Message
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: '1.0'
+summary: |-
+  Senden der Nachricht für eine Gruppe  
+  Senden Sie eine Nachricht für eine Gruppe
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://{endpoint-url}/v1/groups/{test-group-id}/messages'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: GUID der angegebenen Gruppe zugeordnet
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: message
+        in: body
+        isRequired: true
+        description: 'Textnachricht, die in der Gruppe gesendet wird'
+        types:
+          - uid: string
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Access Token vom Auth Endpunkt
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+definitions:
+  - name: Request - SendMessageOnAGroup
+    description: Senden der Nachricht für eine Gruppe
+    kind: object
+    properties:
+      - name: message
+        description: 'Textnachricht, die in der Gruppe gesendet wird'
+        types:
+          - uid: string
+examples: []
+security: []

@@ -1,0 +1,59 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addmembers
+name: Add Members
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: |-
+  Hinzufügen von Mitgliedern zu einer Gruppe  
+  Diese API ermöglicht das Hinzufügen von Mitgliedern zu einer Gruppe
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'PUT https://{endpoint-url}/v1/groups/{test-group-id}/members'
+uriParameters:
+  - name: test-group-id
+    in: path
+    isRequired: true
+    description: GUID der angegebenen Gruppe zugeordnet
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: members
+        in: body
+        isRequired: true
+        description: Array von Rufnummern (mit Countrycode) der neuen Elemente hinzugefügt werden soll
+        types:
+          - uid: string
+            isArray: true
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Access Token vom Auth Endpunkt
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+definitions:
+  - name: Request - Add members to a group
+    description: Hinzufügen von Mitgliedern zu einer Gruppe
+    kind: object
+    properties:
+      - name: members
+        description: Array von Rufnummern (mit Countrycode) der neuen Elemente hinzugefügt werden soll
+        types:
+          - uid: string
+            isArray: true
+examples: []
+security: []

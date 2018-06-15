@@ -1,0 +1,35 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.unsubscribingawebhook
+name: Unsubscribing A Webhook
+service: Kaizala
+groupName: Subscription Webhooks
+apiVersion: '1.0'
+summary: |-
+  Kündigen des Abonnements awebhook  
+  Ein Webhook aufheben
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'DELETE https://{endpoint-url}/v1/webhook/{test-webhook-id}'
+uriParameters:
+  - name: test-webhook-id
+    in: path
+    isRequired: true
+    description: Bezeichner für die WebHook erstellt
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Access Token vom Auth Endpunkt
+    types:
+      - uid: string
+definitions: []
+examples: []
+security: []

@@ -1,0 +1,67 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.getsubscribers
+name: Get Subscribers
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: '1.0'
+summary: |-
+  Abrufen von Abonnenten von einer öffentlichen Gruppe  
+  Diese API ruft die Liste der Teilnehmer über eine verwaltete öffentliche Gruppe
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  - content: 'POST https://{endpoint-url}/v1/groups/{test-public-group-id}/subscribers'
+uriParameters:
+  - name: test-public-group-id
+    in: path
+    isRequired: true
+    description: ''
+    types:
+      - uid: string
+responses:
+  - name: 200 OK
+    description: ''
+requestBody:
+  - parameters:
+      - name: count
+        in: body
+        isRequired: true
+        description: Anzahl von Abonnenten in der Gruppe öffentlich
+        types:
+          - uid: integer
+      - name: cursor
+        in: body
+        isRequired: true
+        description: 'Anfang des Resultset. Für die Paginierung. Legen Sie für die nächste Ergebnis im Textkörper der Anforderung verwendet werden soll. Teilnehmende Antwort nur dann, wenn eine gültige nächste Resultset.'
+        types:
+          - uid: string
+requestHeader:
+  - name: accessToken
+    in: header
+    isRequired: true
+    description: Access Token vom Auth Endpunkt
+    types:
+      - uid: string
+  - name: Content-Type
+    in: header
+    isRequired: true
+    description: application/json
+    types:
+      - uid: string
+definitions:
+  - name: Request - Subscribers of a public group
+    description: Abrufen von Abonnenten von einer öffentlichen Gruppe
+    kind: object
+    properties:
+      - name: count
+        description: Anzahl von Abonnenten in der Gruppe öffentlich
+        types:
+          - uid: integer
+      - name: cursor
+        description: 'Anfang des Resultset. Für die Paginierung. Legen Sie für die nächste Ergebnis im Textkörper der Anforderung verwendet werden soll. Teilnehmende Antwort nur dann, wenn eine gültige nächste Resultset.'
+        types:
+          - uid: string
+examples: []
+security: []
