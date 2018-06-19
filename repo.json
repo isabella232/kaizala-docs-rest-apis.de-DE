@@ -1,0 +1,9 @@
+{
+	"repo": [
+		{
+			"url": "https://github.com/MicrosoftDocs/kaizala-docs",
+			"branch": "master",
+			"name": "kaizala-rest-api-specs"
+		}
+	]
+}

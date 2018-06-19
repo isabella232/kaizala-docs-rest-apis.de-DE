@@ -1,0 +1,23 @@
+{
+  "target_api_root_dir":"docs-ref-autogen",
+  "is_grouped_by_tag":true,
+  "use_service_url_group": true,
+  "organizations":[
+    {
+      "services":[
+        {
+          "toc_title": "Kaizala",
+          "url_group": "kaizala.microsoft.com",
+          "service_index": "docs-ref-index/index.md",
+          "swagger_files": [
+            {
+              "source": "kaizala-rest-api-specs/Rest-API-docs/kaizala_api_full_swagger.json"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
