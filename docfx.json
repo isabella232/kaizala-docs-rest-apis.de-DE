@@ -59,9 +59,9 @@
       "ms.author": "",
       "ms.manager": "",
       "ms.topic": "",
-      "bilingual_type": "hover over",
       "ms.prod": "kaizala",
-      "ms.devlang": "rest-api"
+      "ms.devlang": "rest-api",
+      "bilingual_type": "hover over"
     },
     "fileMetadata": {
       "searchScope": {

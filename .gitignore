@@ -1,0 +1,11 @@
+log/
+obj/
+_site/
+.optemp/
+_themes*/
+_repo.*/
+
+.openpublishing.buildcore.ps1
+
+# ignore generated src folder
+src/
