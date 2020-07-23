@@ -3,99 +3,108 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.subscribetoallev
 name: Subscribe To All Events
 service: Kaizala
 groupName: Subscription Webhooks
-apiVersion: '1.0'
-summary: Abonnieren Sie alle Ereignisse auf Aktionsebene
+apiVersion: "1.0"
+summary: Abonnieren aller Ereignisse auf Aktionsebene
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'POST https://api.kaiza.la/v1/webhook'
+- content: POST https://api.kaiza.la/v1/webhook
 uriParameters: []
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestBody:
-  - parameters:
-      - name: objectId
-        in: body
-        isRequired: true
-        description: ''
-        types:
-          - uid: string
-      - name: objectType
-        in: body
-        isRequired: true
-        description: ''
-        types:
-          - uid: string
-      - name: eventTypes
-        in: body
-        isRequired: true
-        description: ''
-        types:
-          - uid: string
-            isArray: true
-      - name: callBackUrl
-        in: body
-        isRequired: true
-        description: ''
-        types:
-          - uid: string
-      - name: callBackToken
-        in: body
-        isRequired: true
-        description: ''
-        types:
-          - uid: string
-      - name: callBackContext
-        in: body
-        isRequired: true
-        description: ''
-        types:
-          - uid: string
+- name: default
+  parameters:
+  - name: objectId
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+  - name: objectType
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+  - name: eventTypes
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: callBackUrl
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+  - name: callBackToken
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+  - name: callBackContext
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: Access Token vom Auth Endpunkt
-    types:
-      - uid: string
-  - name: Content-Type
-    in: header
-    isRequired: true
-    description: application/json
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom auth-Endpunkt empfangenes Zugriffs Token
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
 definitions:
-  - name: Request - SubscribeToAllEventsAtActionLevel
-    description: Abonnieren Sie alle Ereignisse auf Aktionsebene
-    kind: object
-    properties:
-      - name: objectId
-        description: ''
-        types:
-          - uid: string
-      - name: objectType
-        description: ''
-        types:
-          - uid: string
-      - name: eventTypes
-        description: ''
-        types:
-          - uid: string
-            isArray: true
-      - name: callBackUrl
-        description: ''
-        types:
-          - uid: string
-      - name: callBackToken
-        description: ''
-        types:
-          - uid: string
-      - name: callBackContext
-        description: ''
-        types:
-          - uid: string
+- name: Request - SubscribeToAllEventsAtActionLevel
+  description: Abonnieren aller Ereignisse auf Aktionsebene
+  kind: object
+  properties:
+  - name: objectId
+    description: ''
+    types:
+    - uid: string
+  - name: objectType
+    description: ''
+    types:
+    - uid: string
+  - name: eventTypes
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: callBackUrl
+    description: ''
+    types:
+    - uid: string
+  - name: callBackToken
+    description: ''
+    types:
+    - uid: string
+  - name: callBackContext
+    description: ''
+    types:
+    - uid: string
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: f349c02b42a76570e3042d76fa2c591530d8b7e2
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384206"

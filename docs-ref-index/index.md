@@ -1,6 +1,6 @@
 ---
-title: Kaizala REST-API | MicrosoftDocs
-description: Dieses Thema enthält Inhalte für REST-API-Referenz für die Kaizala-API.
+title: Kaizala-Rest-API | MicrosoftDocs
+description: Dieses Thema enthält Rest-API-Referenzinhalte für die Kaizala-API.
 ms.date: 05-10-2017
 ms.service: kaizala
 ms.topic: conceptual
@@ -9,45 +9,45 @@ ms.author: ''
 manager: ''
 ms.devlang: https
 ms.openlocfilehash: 732aae562aaf823798066952a40526e353072efc
-ms.sourcegitcommit: a9df86259a9029a137346752ff43e135e2db6d14
+ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/15/2018
-ms.locfileid: "19907312"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "45384230"
 ---
-# <a name="kaizala-rest-api"></a>Kaizala REST-API
+# <a name="kaizala-rest-api"></a>Kaizala-Rest-API
 
-Kaizala kann 3. Partei Entwickler integrieren Kaizala in ihre Geschäftsprozesse durch bereitstellen, dass die Möglichkeit zum Ausführen einer curated Reihe von Aktionen in Kaizala mithilfe von REST-API-Aufrufe basiert. Der Bereich der API ist für externe Systeme zum Aufrufen des Endpunkt und Ausführen von Aktionen auf Abruf. D. h., wird dies eine PULL-Modell – sein, in denen einzelne Endpunkte aufgerufen werden, um bestimmte Aktionen Kaizala APIs ausführen müssen. Das PUSH-Modell, in dem Kaizala Plattform Aktionen auslösen kann, kann mithilfe von Webhooks konfiguriert werden.
+Mit Kaizala können Drittanbieterentwickler Kaizala in Ihre Geschäftsprozesse integrieren, indem Sie die Möglichkeit zum Ausführen einer kuratierten Reihe von Aktionen in Kaizala mithilfe von Rest-basierten API-aufrufen bieten. Der Bereich der API besteht darin, dass externe Systeme den End-Punkt aufrufen und Aktionen bei Bedarf ausführen. Das bedeutet, dass es sich hierbei um ein Pull-Modell handelt, in dem einzelne Endpunkte aufgerufen werden müssen, um bestimmte Aktionen mit Kaizala-APIs auszuführen. Das Push-Modell, auf dem die Kaizala-Plattform Aktionen auslösen kann, kann mit webhooks konfiguriert werden.
 
-## <a name="rest-operations"></a>REST-Vorgänge
+## <a name="rest-operations"></a>Rest-Vorgänge
 
 | Vorgang | Beschreibung                                                        |
 |-----------------|--------------------------------------------------------------------|
-| Generieren der Pin | Einmaliges PIN für eine Mobiltelefonnummer generiert, wenn Application/Connector-Id angegeben wird |
-| Refresh Token abrufen | Aktualisierungstoken für die angegebene Anwendung/Connector-Id generiert, wenn Pin, Mobiltelefonnummer & Id Application/Connector wird bereitgestellt. |
-| Generieren Sie Zugriffstoken | Generiert Zugriffstoken, um Kaizala-Ressourcen zugreifen, wenn Aktualisierungstoken, Application/Connector-Id und geheimen Schlüssel Application/Connector bereitgestellt wird |
-| Gruppe erstellen | Ermöglicht die Erstellung einer einer Gruppe, einschließlich der öffentlichen Gruppen verwaltet. Array von Zeichenfolgen verwendet als Eingabe. Jede Zeichenfolge ist Mobiltelefonnummer (mit Ländercode). Diese API kann als input.\n\tGroupType maximal 100 Mobiltelefonnummern akzeptieren: Gruppe/ConnectGroup. ConnectGroup für Öffentliche Gruppe verwaltet. |
-| Untergruppe erstellen | Erstellen Sie eine Sub-Gruppe  |
-| Hinzufügen von Mitgliedern | Hinzufügen von Mitgliedern zu einer Gruppe |
-| Hinzufügen einer Untergruppe | Gruppe in eine andere Gruppe als eine Untergruppe hinzufügen |
-| Hinzufügen von Abonnenten | Hinzufügen von Abonnenten an eine öffentliche Gruppe |
-| Details der Fetch | Abrufen von Informationen für eine Gruppe |
-| Abrufen der Member | Gibt die Liste der Elemente in einer Gruppe |
-| FETCH-Abonnenten | Ruft die Liste der Teilnehmer über eine verwaltete öffentliche Gruppe |
-| FETCH Untergruppe | Abrufen von Untergruppen einer Gruppe |
-| Gruppe als Untergruppe entfernen | Entfernen Sie die Gruppe als eine Untergruppe in eine andere Gruppe |
-| Entfernen von Mitgliedern | Entfernt Mitglieder aus einer Gruppe |
-| Entfernen von Abonnenten | Entfernen von Abonnenten aus einer verwalteten öffentliche Gruppe |
-| Direkte FETCH-Gruppen | Gibt alle direkte Gruppen mit dem Benutzer zugeordnet ist |
-| Nachricht senden | Senden Sie eine Nachricht für eine Gruppe |
-| Senden der Nachricht an einen Abonnenten | Senden Sie Nachricht an Abonnenten in einer öffentlichen Gruppe |
-| Medien hochladen | Uploads Medien (Bild, Dokument, Audio, Album oder Video) |
-| Umfrage senden | Erstellen einer Umfrage, und für eine Gruppe senden können |
-| Erstellen von benutzerdefinierten Aktion für ein-Abonnent | Erstellen von benutzerdefinierten Aktion für Abonnenten in einer öffentlichen Gruppe |
-| POST-Antwort auf eine Aktivität | Stellen Sie eine Antwort auf eine Aktion |
-| POST-Antwort auf eine Umfrage | Stellen Sie eine Antwort auf eine Umfrage |
-| Abrufen von Aufträgen | Abrufen von Aufträgen in einer Gruppe |
-| FETCH Umfrageantworten | Abrufen von Antworten für eine Umfrage |
-| Abrufen Sie aller Webhooks | Gibt alle Webhooks für eine Gruppe |
-| Alle Ereignisse abonniert | Abonnieren Sie alle Ereignisse auf Aktionsebene |
-| Melden Sie sich ab einem Webhook | Ein Webhook aufheben |
+| PIN generieren | Generiert eine einmalige PIN für eine Mobiltelefonnummer, wenn die Application/Connector-ID bereitgestellt wird. |
+| Aktualisierungs Token abrufen | Generiert ein Aktualisierungstoken für die angegebene Anwendung/Connector-ID, wenn Pin, Mobiltelefonnummer & Application/Connector-ID bereitgestellt wird. |
+| Zugriffs Token generieren | Generiert Zugriffstoken für den Zugriff auf Kaizala-Ressourcen, wenn Update Token, Application/Connector-ID und Application/Connector Secret bereitgestellt wird |
+| Gruppe erstellen | Ermöglicht die Erstellung einer a-Gruppe, einschließlich verwalteter öffentlicher Gruppen. Es wird ein Array von Zeichenfolgen als Eingabe benötigt. Jede Zeichenfolge ist eine Mobiltelefonnummer (mit Landesvorwahl). Diese API kann maximal 100 Mobiltelefonnummern als Eingabe annehmen. \ n \ tGroupType: Group/connectgroup. Connectgroup für die verwaltete öffentliche Gruppe. |
+| Untergruppe erstellen | Erstellen einer Untergruppe  |
+| Mitglieder hinzufügen | Hinzufügen von Mitgliedern zu einer Gruppe |
+| Untergruppe hinzufügen | Hinzufügen einer Gruppe als Untergruppe zu einer anderen Gruppe |
+| Abonnenten hinzufügen | Hinzufügen von Teilnehmern zu einer öffentlichen Gruppe |
+| Fetch Group Details | Abrufen von Details für eine Gruppe |
+| FETCH-Member | Gibt eine Liste der Mitglieder in einer Gruppe zurück. |
+| Abonnenten abrufen | Ruft eine Liste der Abonnenten einer verwalteten öffentlichen Gruppe ab. |
+| Untergruppe abrufen | Abrufen von Untergruppen einer Gruppe |
+| Gruppe als Untergruppe entfernen | Gruppe als Untergruppe zu einer anderen Gruppe entfernen |
+| Mitglieder entfernen | Entfernt Mitglieder aus einer Gruppe. |
+| Abonnenten entfernen | Entfernen von Teilnehmern aus einer verwalteten öffentlichen Gruppe |
+| Direkte Gruppen abrufen | Gibt alle mit dem Benutzer verknüpften direkten Gruppen zurück. |
+| Nachricht senden | Senden einer Nachricht an eine Gruppe |
+| Senden einer Nachricht an einen Abonnenten | Senden von Nachrichten an Teilnehmer in einer öffentlichen Gruppe |
+| Hochladen von Medien | Uploads von Medien (Bild, Dokument, Audio, Album oder Video) |
+| Umfrage senden | Ermöglicht das Erstellen einer Umfrage und das Senden einer Gruppe |
+| Bereitstelleneiner benutzerdefinierten Aktion auf einem Abonnenten | Bereitstelleneiner benutzerdefinierten Aktion an Abonnenten in einer öffentlichen Gruppe |
+| Post-Antwort auf eine Aktion | Bereitstelleneiner Antwort auf eine Aktion |
+| Bereitstellen der Antwort auf eine Umfrage | Bereitstelleneiner Antwort auf eine Umfrage |
+| Aufträge abrufen | Abrufen von Aufträgen in einer Gruppe |
+| Abrufen von Umfrage Antworten | Abrufen von Antworten für eine Umfrage |
+| Abrufen aller webhooks | Gibt alle webhooks für eine Gruppe zurück. |
+| Abonnieren aller Ereignisse | Abonnieren aller Ereignisse auf Aktionsebene |
+| Kündigen eines webhooks | Kündigen eines webhooks |

@@ -3,45 +3,51 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis.fetchingsurveyrespon
 name: Fetching Survey Responses
 service: Kaizala
 groupName: Content Query APIs
-apiVersion: '1.0'
-summary: |-
-  Abrufen von Umfrageantworten  
-  Diese API können Sie die Antworten für eine Umfrage abrufen
+apiVersion: "1.0"
+summary: "Abrufen von Umfrage Antworten  \nMit dieser API können Sie Antworten für eine Umfrage abrufen."
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'GET https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-survey-id}?getDetails={getDetails}'
+- content: GET https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-survey-id}?getDetails={getDetails}
 uriParameters:
-  - name: test-group-id
-    in: path
-    isRequired: true
-    description: GUID der angegebenen Gruppe zugeordnet
-    types:
-      - uid: string
-  - name: test-survey-id
-    in: path
-    isRequired: true
-    description: Die angegebene Umfrage zugeordnete GUID
-    types:
-      - uid: string
-  - name: getDetails
-    in: query
-    isRequired: true
-    description: ''
-    types:
-      - uid: boolean
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: Der angegebenen Gruppe zugeordnete GUID
+  types:
+  - uid: string
+- name: test-survey-id
+  in: path
+  isRequired: true
+  description: Der angegebenen Umfrage zugeordnete GUID
+  types:
+  - uid: string
+- name: getDetails
+  in: query
+  isRequired: true
+  description: ''
+  types:
+  - uid: boolean
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: Access Token vom Auth Endpunkt
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom auth-Endpunkt empfangenes Zugriffs Token
+  types:
+  - uid: string
 definitions: []
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: 13e672b6094021285e284e256966077e5261512f
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384190"

@@ -3,65 +3,72 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.getsubscribers
 name: Get Subscribers
 service: Kaizala
 groupName: Group Management APIs
-apiVersion: '1.0'
-summary: |-
-  Abrufen von Abonnenten von einer öffentlichen Gruppe  
-  Diese API ruft die Liste der Teilnehmer über eine verwaltete öffentliche Gruppe
+apiVersion: "1.0"
+summary: "Abonnenten einer öffentlichen Gruppe abrufen  \nDiese API ruft eine Liste der Abonnenten einer verwalteten öffentlichen Gruppe ab."
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'POST https://{endpoint-url}/v1/groups/{test-public-group-id}/subscribers'
+- content: POST https://{endpoint-url}/v1/groups/{test-public-group-id}/subscribers
 uriParameters:
-  - name: test-public-group-id
-    in: path
-    isRequired: true
-    description: ''
-    types:
-      - uid: string
+- name: test-public-group-id
+  in: path
+  isRequired: true
+  description: ''
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestBody:
-  - parameters:
-      - name: count
-        in: body
-        isRequired: true
-        description: Anzahl von Abonnenten in der Gruppe öffentlich
-        types:
-          - uid: integer
-      - name: cursor
-        in: body
-        isRequired: true
-        description: 'Anfang des Resultset. Für die Paginierung. Legen Sie für die nächste Ergebnis im Textkörper der Anforderung verwendet werden soll. Teilnehmende Antwort nur dann, wenn eine gültige nächste Resultset.'
-        types:
-          - uid: string
+- name: default
+  parameters:
+  - name: count
+    in: body
+    isRequired: true
+    description: Anzahl der Abonnenten in der öffentlichen Gruppe
+    types:
+    - uid: integer
+  - name: cursor
+    in: body
+    isRequired: true
+    description: Anfang des Resultsets. Für die Paginierung. Im Anforderungstext zum Abrufen der nächsten Ergebnismenge verwendet werden soll. In Antwort nur vorhanden, wenn es eine gültige nächste Ergebnismenge gibt.
+    types:
+    - uid: string
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: Access Token vom Auth Endpunkt
-    types:
-      - uid: string
-  - name: Content-Type
-    in: header
-    isRequired: true
-    description: application/json
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom auth-Endpunkt empfangenes Zugriffs Token
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
 definitions:
-  - name: Request - Subscribers of a public group
-    description: Abrufen von Abonnenten von einer öffentlichen Gruppe
-    kind: object
-    properties:
-      - name: count
-        description: Anzahl von Abonnenten in der Gruppe öffentlich
-        types:
-          - uid: integer
-      - name: cursor
-        description: 'Anfang des Resultset. Für die Paginierung. Legen Sie für die nächste Ergebnis im Textkörper der Anforderung verwendet werden soll. Teilnehmende Antwort nur dann, wenn eine gültige nächste Resultset.'
-        types:
-          - uid: string
+- name: Request - Subscribers of a public group
+  description: Abonnenten einer öffentlichen Gruppe abrufen
+  kind: object
+  properties:
+  - name: count
+    description: Anzahl der Abonnenten in der öffentlichen Gruppe
+    types:
+    - uid: integer
+  - name: cursor
+    description: Anfang des Resultsets. Für die Paginierung. Im Anforderungstext zum Abrufen der nächsten Ergebnismenge verwendet werden soll. In Antwort nur vorhanden, wenn es eine gültige nächste Ergebnismenge gibt.
+    types:
+    - uid: string
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: 9feceb524f32dd80dd441794119f478c5993cd03
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384212"

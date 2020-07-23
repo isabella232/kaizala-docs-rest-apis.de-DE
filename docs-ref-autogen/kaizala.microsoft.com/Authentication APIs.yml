@@ -1,19 +1,20 @@
 ### YamlMime:RESTOperationGroup
 uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis
 name: Authentication APIs
-summary: Diese APIs können Sie den Zugriff für 3. Partei Systeme zur Interaktion mit Kaizala-API-Plattform. Kaizala implementiert benutzerdefinierte token basierend Autorisierungsmechanismus. Dieser Mechanismus wird das Konzept der Aktualisierung und Zugriffstoken zum Verwalten der Autorisierung für die Kaizala-Plattform-APIs verwendet. / n
-apiVersion: '1.0'
+summary: Diese APIs helfen beim Zugriff auf Drittanbietersysteme zur Interaktion mit der Kaizala-API-Plattform. Kaizala implementiert benutzerdefinierten Token-basierte Autorisierungsmechanismus. Dieser Mechanismus verwendet das Konzept der Aktualisierungs-und Zugriffstoken, um die Zugriffsautorisierung für die Kaizala-Platt Form APIs zu verwalten. /n
+apiVersion: "1.0"
 service: Kaizala
 operations:
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
-    summary: |-
-      Das Zugriffstoken abzurufen  
-      Diese API generiert Zugriffstoken, um Kaizala-Ressourcen zugreifen, wenn Aktualisierungstoken, Application/Connector-Id und geheimen Schlüssel Application/Connector bereitgestellt wird
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generatepin
-    summary: |-
-      Einmalige PIN generieren  
-      Diese API einmalig PIN für eine Mobiltelefonnummer generiert, wenn Application/Connector-Id angegeben wird.
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.getrefreshtoken
-    summary: |-
-      Melden Sie sich mit Pin und ApplicationId Refresh token abrufen  
-      Diese API Aktualisierungstoken für die angegebene Anwendung/Connector-Id generiert, wenn Pin, Mobiltelefonnummer & Id Application/Connector wird bereitgestellt.
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
+  summary: "Abrufen des Zugriffstokens  \nDiese API generiert Zugriffstoken für den Zugriff auf Kaizala-Ressourcen, wenn Aktualisierungstoken, Application/Connector-ID und Application/Connector Secret bereitgestellt wird."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generatepin
+  summary: "Einmalige PIN generieren  \nDiese API generiert eine einmalige PIN für eine Mobiltelefonnummer, wenn die Application/Connector-ID bereitgestellt wird."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.getrefreshtoken
+  summary: "Anmeldung mit PIN und ApplicationId zum Abrufen des Aktualisierungs Tokens  \nDiese API generiert Aktualisierungstoken für die angegebene Application/Connector-ID, wenn Pin, Mobiltelefonnummer & Application/Connector-ID bereitgestellt wird."
+metadata:
+  ms.openlocfilehash: ddd268ce6fd4b49bed8cbaa09915c0b4fe4ddddc
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384106"

@@ -3,27 +3,33 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.uploadmedia
 name: Upload Media
 service: Kaizala
 groupName: Content Creation APIs
-apiVersion: '1.0'
-summary: |-
-  Medien hochladen  
-  Diese API hochgeladen Medien (Bild, Dokument, Audio, Album oder Video)
+apiVersion: "1.0"
+summary: "Hochladen von Medien  \nDiese API lädt Medien (Bild, Dokument, Audio, Album oder Video) hoch"
 consumes:
-  - multipart/form-data
+- multipart/form-data
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'POST https://api.kaiza.la/v1/media'
+- content: POST https://api.kaiza.la/v1/media
 uriParameters: []
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: Access Token vom Auth Endpunkt
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom auth-Endpunkt empfangenes Zugriffs Token
+  types:
+  - uid: string
 definitions: []
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: 91a1de3ea70b22413561b7f87857e39c866ca3d3
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384192"

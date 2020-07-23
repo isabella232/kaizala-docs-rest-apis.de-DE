@@ -3,99 +3,106 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postcustomactions
 name: Post Custom Action Subscriber
 service: Kaizala
 groupName: Content Creation APIs
-apiVersion: '1.0'
-summary: |-
-  Erstellen von benutzerdefinierten Aktion für Abonnenten in einer öffentlichen Gruppe  
-  Diese API können Sie eine benutzerdefinierte Aktion Subscibers in einer öffentlichen Gruppe buchen
+apiVersion: "1.0"
+summary: "Bereitstelleneiner benutzerdefinierten Aktion an Abonnenten in einer öffentlichen Gruppe  \nMit dieser API können Sie eine benutzerdefinierte Aktion für subscibers in einer öffentlichen Gruppe bereitstellen."
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'POST https://{endpoint-url}/v1/groups/{test-public-group-id}/actions'
+- content: POST https://{endpoint-url}/v1/groups/{test-public-group-id}/actions
 uriParameters:
-  - name: test-public-group-id
-    in: path
-    isRequired: true
-    description: Der angegebene öffentliche Gruppe zugeordnete GUID
-    types:
-      - uid: string
+- name: test-public-group-id
+  in: path
+  isRequired: true
+  description: Der angegebenen öffentlichen Gruppe zugeordnete GUID
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestBody:
-  - parameters:
-      - name: id
-        in: body
-        isRequired: true
-        description: Aktion-Paket-id
-        types:
-          - uid: string
-      - name: actionBody
-        in: body
-        isRequired: true
-        description: 'Benutzerdefinierte Aktion, die an einen Abonnenten gesendet werden.'
-        types:
-          - uid: SubscribersCustomActionBody
-      - name: subscribers
-        in: body
-        isRequired: true
-        description: ''
-        types:
-          - uid: string
-            isArray: true
-      - name: sendToAllSubscribers
-        in: body
-        isRequired: true
-        description: ''
-        types:
-          - uid: boolean
+- name: default
+  parameters:
+  - name: id
+    in: body
+    isRequired: true
+    description: Aktionspaket-ID
+    types:
+    - uid: string
+  - name: actionBody
+    in: body
+    isRequired: true
+    description: An einen Abonnenten gesendete benutzerdefinierte Aktion
+    types:
+    - uid: SubscribersCustomActionBody
+  - name: subscribers
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: sendToAllSubscribers
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: boolean
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: Access Token vom Auth Endpunkt
-    types:
-      - uid: string
-  - name: Content-Type
-    in: header
-    isRequired: true
-    description: application/json
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom auth-Endpunkt empfangenes Zugriffs Token
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
 definitions:
-  - name: SubscribersCustomActionBody
-    description: 'Benutzerdefinierte Aktion, die an einen Abonnenten gesendet werden.'
-    kind: object
-    properties:
-      - name: title
-        description: Titel
-        types:
-          - uid: string
-      - name: validity
-        description: Gültigkeit
-        types:
-          - uid: integer
-  - name: Request - Send Custom Action To Subscriber(s)
-    description: Erstellen von benutzerdefinierten Aktion für Abonnenten in einer öffentlichen Gruppe
-    kind: object
-    properties:
-      - name: id
-        description: Aktion-Paket-id
-        types:
-          - uid: string
-      - name: actionBody
-        description: 'Benutzerdefinierte Aktion, die an einen Abonnenten gesendet werden.'
-        types:
-          - uid: SubscribersCustomActionBody
-      - name: subscribers
-        description: ''
-        types:
-          - uid: string
-            isArray: true
-      - name: sendToAllSubscribers
-        description: ''
-        types:
-          - uid: boolean
+- name: SubscribersCustomActionBody
+  description: An einen Abonnenten gesendete benutzerdefinierte Aktion
+  kind: object
+  properties:
+  - name: title
+    description: Titel
+    types:
+    - uid: string
+  - name: validity
+    description: Gültigkeit
+    types:
+    - uid: integer
+- name: Request - Send Custom Action To Subscriber(s)
+  description: Bereitstelleneiner benutzerdefinierten Aktion an Abonnenten in einer öffentlichen Gruppe
+  kind: object
+  properties:
+  - name: id
+    description: Aktionspaket-ID
+    types:
+    - uid: string
+  - name: actionBody
+    description: An einen Abonnenten gesendete benutzerdefinierte Aktion
+    types:
+    - uid: SubscribersCustomActionBody
+  - name: subscribers
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: sendToAllSubscribers
+    description: ''
+    types:
+    - uid: boolean
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: ccd11dae82f886b838501a6f1e61cd50c6c0a022
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384178"

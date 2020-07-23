@@ -3,33 +3,39 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.unsubscribingawe
 name: Unsubscribing A Webhook
 service: Kaizala
 groupName: Subscription Webhooks
-apiVersion: '1.0'
-summary: |-
-  Kündigen des Abonnements awebhook  
-  Ein Webhook aufheben
+apiVersion: "1.0"
+summary: "Awebhook kündigen  \nKündigen eines webhooks"
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'DELETE https://{endpoint-url}/v1/webhook/{test-webhook-id}'
+- content: DELETE https://{endpoint-url}/v1/webhook/{test-webhook-id}
 uriParameters:
-  - name: test-webhook-id
-    in: path
-    isRequired: true
-    description: Bezeichner für die WebHook erstellt
-    types:
-      - uid: string
+- name: test-webhook-id
+  in: path
+  isRequired: true
+  description: Bezeichner, der den erstellten webhook darstellt
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: Access Token vom Auth Endpunkt
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom auth-Endpunkt empfangenes Zugriffs Token
+  types:
+  - uid: string
 definitions: []
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: ee9f69f3b5f76e543c77e991510a054ecd38e866
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384204"

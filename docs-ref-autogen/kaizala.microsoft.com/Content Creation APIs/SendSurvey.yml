@@ -3,119 +3,126 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendsurvey
 name: Send Survey
 service: Kaizala
 groupName: Content Creation APIs
-apiVersion: '1.0'
-summary: |-
-  Umfrage zu einer Gruppe senden  
-  Diese API ermöglicht das Erstellen einer Umfrage und für eine Gruppe senden
+apiVersion: "1.0"
+summary: "Umfrage zu einer Gruppe senden  \nMit dieser API können Sie eine Umfrage erstellen und eine Gruppe senden."
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'POST https://{endpoint-url}/v1/groups/{test-group-id}/actions'
+- content: POST https://{endpoint-url}/v1/groups/{test-group-id}/actions
 uriParameters:
-  - name: test-group-id
-    in: path
-    isRequired: true
-    description: GUID der angegebenen Gruppe zugeordnet
-    types:
-      - uid: string
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: Der angegebenen Gruppe zugeordnete GUID
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestBody:
-  - parameters:
-      - name: actionType
-        in: body
-        isRequired: true
-        description: ''
-        types:
-          - uid: string
-      - name: actionBody
-        in: body
-        isRequired: true
-        description: Umfrage Aktion Textkörper
-        types:
-          - uid: Request - SurveyActionBody
+- name: default
+  parameters:
+  - name: actionType
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+  - name: actionBody
+    in: body
+    isRequired: true
+    description: Vermessungs Aktionstext
+    types:
+    - uid: Request - SurveyActionBody
 requestHeader:
-  - name: Content-Type
-    in: header
-    isRequired: true
-    description: application/json
-    types:
-      - uid: string
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: Access Token vom Auth Endpunkt
-    types:
-      - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom auth-Endpunkt empfangenes Zugriffs Token
+  types:
+  - uid: string
 definitions:
-  - name: Request - SurveyActionBody
-    description: Umfrage Aktion Textkörper
-    kind: object
-    properties:
-      - name: isAnonymous
-        description: ''
-        types:
-          - uid: boolean
-      - name: isSenderOnly
-        description: ''
-        types:
-          - uid: boolean
-      - name: acceptMultipleResponses
-        description: ''
-        types:
-          - uid: boolean
-      - name: dueDate
-        description: ''
-        types:
-          - uid: integer
-      - name: title
-        description: ''
-        types:
-          - uid: string
-      - name: questions
-        description: Frage
-        types:
-          - uid: Question
-            isArray: true
-  - name: Request - SendSurveyOnAGroup
-    description: Umfrage zu einer Gruppe senden
-    kind: object
-    properties:
-      - name: actionType
-        description: ''
-        types:
-          - uid: string
-      - name: actionBody
-        description: Umfrage Aktion Textkörper
-        types:
-          - uid: Request - SurveyActionBody
-  - name: Question
+- name: Request - SurveyActionBody
+  description: Vermessungs Aktionstext
+  kind: object
+  properties:
+  - name: isAnonymous
+    description: ''
+    types:
+    - uid: boolean
+  - name: isSenderOnly
+    description: ''
+    types:
+    - uid: boolean
+  - name: acceptMultipleResponses
+    description: ''
+    types:
+    - uid: boolean
+  - name: dueDate
+    description: ''
+    types:
+    - uid: integer
+  - name: title
+    description: ''
+    types:
+    - uid: string
+  - name: questions
     description: Frage
-    kind: object
-    properties:
-      - name: title
-        description: ''
-        types:
-          - uid: string
-      - name: type
-        description: ''
-        types:
-          - uid: string
-      - name: options
-        description: Option
-        types:
-          - uid: Option
-            isArray: true
-  - name: Option
+    types:
+    - uid: Question
+      isArray: true
+- name: Request - SendSurveyOnAGroup
+  description: Umfrage zu einer Gruppe senden
+  kind: object
+  properties:
+  - name: actionType
+    description: ''
+    types:
+    - uid: string
+  - name: actionBody
+    description: Vermessungs Aktionstext
+    types:
+    - uid: Request - SurveyActionBody
+- name: Question
+  description: Frage
+  kind: object
+  properties:
+  - name: title
+    description: ''
+    types:
+    - uid: string
+  - name: type
+    description: ''
+    types:
+    - uid: string
+  - name: options
     description: Option
-    kind: object
-    properties:
-      - name: title
-        description: ''
-        types:
-          - uid: string
+    types:
+    - uid: Option
+      isArray: true
+- name: Option
+  description: Option
+  kind: object
+  properties:
+  - name: title
+    description: ''
+    types:
+    - uid: string
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: 3da25582f07763a8ca3a1cae636a26eb66c99b92
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384186"

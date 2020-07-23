@@ -1,35 +1,28 @@
 ### YamlMime:RESTOperationGroup
 uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis
 name: Content Creation APIs
-summary: 'API-Endpunkt Unterhaltungsgruppen innerhalb Kaizala Instanzen von Kaizala Aktionen an. <br /> Aktuellen Bereich besteht darin, folgende Aktivitätstypen unterstützen: <Table>  <tr><th> Aktion </th> <th>POST unterstützt. </th><th> Id </th></tr> <tr><td> Bild Anlage </td> <td> Ja </td> <td>  Abbildung  </td></tr> <tr><td> Audio-Anlage </td> <td> Ja </td> <td>  audio  </td></tr> <tr><td> Dokument-Anlage </td> <td> Ja </td>  <td>  document  </td></tr> <tr><td> Kontakt in der Anlage </td> <td> Nein </td> <td>  n/v  </td></tr> <tr><td> Auftrag </td> <td> Ja </td>  <td>  Auftrag  </td></tr> <tr><td> Umfrage </td> <td> Ja </td> <td>  Umfrage  </td></tr> <tr><td> Foto mit Speicherort </td> <td> Nein </td> <td>  photoWithLocation  </td></tr> <tr><td> Treffen wir uns </td> <td> Ja </td> <td>  LetsMeet  </td></tr> <tr><td> Schnelle Umfrage </td> <td> Ja </td> <td>  Umfrage  </td></tr> <tr><td> Speicherort freigeben </td> <td> Nein </td> <td>  shareLocation  </td></tr> <tr><td> Speicherort der Anforderung </td> <td> Nein </td> <td>  n/v  </td></tr> <tr><td> Live-Speicherort </td> <td> Nein </td> <td>  n/v  </td></tr> <tr><td> Announcement </td> <td> Ja </td> <td>  Announcement  </td></tr> </Table> '
-apiVersion: '1.0'
+summary: 'API-Endpunkt zum Senden von Instanzen von Kaizala-Aktionen an unterhaltungsgruppen in Kaizala. <br /> Der aktuelle Bereich unterstützt die folgenden Aktionstypen: <Table>  <tr><th> Aktion </th> <th>Beitrag unterstützt </th><th> Id </th></tr> <tr><td> Bild Anlage </td> <td> Ja </td> <td>  Abbildung  </td></tr> <tr><td> Audio-Anlage </td> <td> Ja </td> <td>  audio  </td></tr> <tr><td> Dokument Anlage </td> <td> Ja </td>  <td>  document  </td></tr> <tr><td> Kontakt Anlage </td> <td> Nein </td> <td>  Nicht zutreffend  </td></tr> <tr><td> Auftrag </td> <td> Ja </td>  <td>  Auftrag  </td></tr> <tr><td> Umfrage </td> <td> Ja </td> <td>  Umfrage  </td></tr> <tr><td> Foto mit Standort </td> <td> Nein </td> <td>  photoWithLocation  </td></tr> <tr><td> Let es Meet </td> <td> Ja </td> <td>  LetsMeet  </td></tr> <tr><td> Kurzumfrage </td> <td> Ja </td> <td>  Umfrage  </td></tr> <tr><td> Freigabespeicherort </td> <td> Nein </td> <td>  shareLocation  </td></tr> <tr><td> Anforderungs Speicherort </td> <td> Nein </td> <td>  Nicht zutreffend  </td></tr> <tr><td> Live-Standort </td> <td> Nein </td> <td>  Nicht zutreffend  </td></tr> <tr><td> Ankündigung </td> <td> Ja </td> <td>  Ankündigung  </td></tr> </Table> '
+apiVersion: "1.0"
 service: Kaizala
 operations:
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postcustomactionsubscriber
-    summary: |-
-      Erstellen von benutzerdefinierten Aktion für Abonnenten in einer öffentlichen Gruppe  
-      Diese API können Sie eine benutzerdefinierte Aktion Subscibers in einer öffentlichen Gruppe buchen
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingactionresponse
-    summary: |-
-      Bereitstellen einer Antwort auf eine Aktion  
-      Diese API können Sie die Antwort auf eine Aktion buchen
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingsurveyresponse
-    summary: |-
-      Bereitstellen einer Antwort auf eine Umfrage  
-      Diese API können Sie die Antwort auf einer bestimmten Umfrage teilnehmen buchen
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendmessage
-    summary: |-
-      Senden der Nachricht für eine Gruppe  
-      Senden Sie eine Nachricht für eine Gruppe
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendmessagetosubscriber
-    summary: |-
-      Senden Sie Nachricht an Abonnenten in einer öffentlichen Gruppe  
-      Diese API können Sie eine Nachricht an Abonnenten in einer öffentlichen Gruppe senden
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendsurvey
-    summary: |-
-      Umfrage zu einer Gruppe senden  
-      Diese API ermöglicht das Erstellen einer Umfrage und für eine Gruppe senden
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.uploadmedia
-    summary: |-
-      Medien hochladen  
-      Diese API hochgeladen Medien (Bild, Dokument, Audio, Album oder Video)
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postcustomactionsubscriber
+  summary: "Bereitstelleneiner benutzerdefinierten Aktion an Abonnenten in einer öffentlichen Gruppe  \nMit dieser API können Sie eine benutzerdefinierte Aktion für subscibers in einer öffentlichen Gruppe bereitstellen."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingactionresponse
+  summary: "Veröffentlichen einer Antwort auf eine Aktion  \nMit dieser API können Sie eine Antwort auf eine Aktion bereitstellen."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingsurveyresponse
+  summary: "Veröffentlichen einer Antwort auf eine Umfrage  \nMit dieser API können Sie eine Antwort auf eine bestimmte Umfrage Posten."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendmessage
+  summary: "Nachricht in einer Gruppe senden  \nSenden einer Nachricht an eine Gruppe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendmessagetosubscriber
+  summary: "Senden von Nachrichten an Teilnehmer in einer öffentlichen Gruppe  \nMit dieser API können Sie eine Nachricht an Abonnenten in einer öffentlichen Gruppe senden."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendsurvey
+  summary: "Umfrage zu einer Gruppe senden  \nMit dieser API können Sie eine Umfrage erstellen und eine Gruppe senden."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.uploadmedia
+  summary: "Hochladen von Medien  \nDiese API lädt Medien (Bild, Dokument, Audio, Album oder Video) hoch"
+metadata:
+  ms.openlocfilehash: e72e009cdbcbb6919a7ebbbc1991e0fd4d3cc74f
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384104"

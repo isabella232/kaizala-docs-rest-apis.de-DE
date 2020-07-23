@@ -3,57 +3,64 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubgroup
 name: Add Subgroup
 service: Kaizala
 groupName: Group Management APIs
-apiVersion: '1.0'
-summary: |-
-  Diese API ermöglicht das ermöglicht das Hinzufügen der Gruppe als eine Untergruppe in eine andere Gruppe  
-  Gruppe in eine andere Gruppe als eine Untergruppe hinzufügen
+apiVersion: "1.0"
+summary: "Mit dieser API können Sie eine Gruppe als Untergruppe zu einer anderen Gruppe hinzufügen.  \nHinzufügen einer Gruppe als Untergruppe zu einer anderen Gruppe"
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'PUT https://{endpoint-url}/v1/groups/{test-group-id}/subGroups'
+- content: PUT https://{endpoint-url}/v1/groups/{test-group-id}/subGroups
 uriParameters:
-  - name: test-group-id
-    in: path
-    isRequired: true
-    description: GUID der angegebenen Gruppe zugeordnet
-    types:
-      - uid: string
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: Der angegebenen Gruppe zugeordnete GUID
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestBody:
-  - parameters:
-      - name: subGroups
-        in: body
-        isRequired: true
-        description: 'Array von Gruppen mit der Liste der Untergruppen, falls vorhanden'
-        types:
-          - uid: string
-            isArray: true
+- name: default
+  parameters:
+  - name: subGroups
+    in: body
+    isRequired: true
+    description: Array von Gruppen mit der Liste der Untergruppen (sofern vorhanden)
+    types:
+    - uid: string
+      isArray: true
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: Access Token vom Auth Endpunkt
-    types:
-      - uid: string
-  - name: Content-Type
-    in: header
-    isRequired: true
-    description: application/json
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom auth-Endpunkt empfangenes Zugriffs Token
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
 definitions:
-  - name: Request - Add group as a subGroup to another group
-    description: Gruppe in eine andere Gruppe als eine Untergruppe hinzufügen
-    kind: object
-    properties:
-      - name: subGroups
-        description: 'Array von Gruppen mit der Liste der Untergruppen, falls vorhanden'
-        types:
-          - uid: string
-            isArray: true
+- name: Request - Add group as a subGroup to another group
+  description: Hinzufügen einer Gruppe als Untergruppe zu einer anderen Gruppe
+  kind: object
+  properties:
+  - name: subGroups
+    description: Array von Gruppen mit der Liste der Untergruppen (sofern vorhanden)
+    types:
+    - uid: string
+      isArray: true
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: 076ff9bb1fb0aa7efb77f3fb4f6cd1a5360e38a6
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384202"
