@@ -3,33 +3,39 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.unsubscribingawe
 name: Unsubscribing A Webhook
 service: Kaizala
 groupName: Subscription Webhooks
-apiVersion: '1.0'
-summary: |-
-  <span data-ttu-id="783f8-101">Kündigen des Abonnements awebhook</span><span class="sxs-lookup"><span data-stu-id="783f8-101">Unsubscribing awebhook</span></span>  
-  <span data-ttu-id="783f8-102">Ein Webhook aufheben</span><span class="sxs-lookup"><span data-stu-id="783f8-102">Unsubscribing a webhook</span></span>
+apiVersion: "1.0"
+summary: "Awebhook kündigen  \nKündigen eines webhooks"
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'DELETE https://{endpoint-url}/v1/webhook/{test-webhook-id}'
+- content: DELETE https://{endpoint-url}/v1/webhook/{test-webhook-id}
 uriParameters:
-  - name: test-webhook-id
-    in: path
-    isRequired: true
-    description: <span data-ttu-id="783f8-103">Bezeichner für die WebHook erstellt</span><span class="sxs-lookup"><span data-stu-id="783f8-103">Identifier representing the webHook created</span></span>
-    types:
-      - uid: string
+- name: test-webhook-id
+  in: path
+  isRequired: true
+  description: Bezeichner, der den erstellten webhook darstellt
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: <span data-ttu-id="783f8-104">Access Token vom Auth Endpunkt</span><span class="sxs-lookup"><span data-stu-id="783f8-104">Access Token received from the auth end-point</span></span>
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom auth-Endpunkt empfangenes Zugriffs Token
+  types:
+  - uid: string
 definitions: []
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: ee9f69f3b5f76e543c77e991510a054ecd38e866
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384204"

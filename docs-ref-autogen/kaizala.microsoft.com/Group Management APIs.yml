@@ -1,61 +1,40 @@
 ### YamlMime:RESTOperationGroup
 uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis
 name: Group Management APIs
-summary: <span data-ttu-id="3ba36-101">Diese APIs ermöglichen Gruppe Admin(s) Group-Ressourcen zugreifen und Gruppenmitgliedschaften entsprechend verwalten.</span><span class="sxs-lookup"><span data-stu-id="3ba36-101">These APIs allow group admin(s) to access group resources and manage group memberships accordingly.</span></span> <br />
-apiVersion: '1.0'
+summary: Diese APIs ermöglichen es Gruppen Administratoren, auf Gruppen Ressourcen zuzugreifen und Gruppenmitgliedschaften entsprechend zu verwalten. <br />
+apiVersion: "1.0"
 service: Kaizala
 operations:
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addmembers
-    summary: |-
-      <span data-ttu-id="3ba36-102">Hinzufügen von Mitgliedern zu einer Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-102">Add members to a group</span></span>  
-      <span data-ttu-id="3ba36-103">Diese API ermöglicht das Hinzufügen von Mitgliedern zu einer Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-103">This API lets addition of members to a group</span></span>
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubgroup
-    summary: |-
-      <span data-ttu-id="3ba36-104">Diese API ermöglicht das ermöglicht das Hinzufügen der Gruppe als eine Untergruppe in eine andere Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-104">This API allows lets addition of group as a sub-group to another group</span></span>  
-      <span data-ttu-id="3ba36-105">Gruppe in eine andere Gruppe als eine Untergruppe hinzufügen</span><span class="sxs-lookup"><span data-stu-id="3ba36-105">Add group as a sub-group to another group</span></span>
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubscribers
-    summary: |-
-      <span data-ttu-id="3ba36-106">Hinzufügen von Abonnenten an eine öffentliche Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-106">Add Subscribers to a public group</span></span>  
-      <span data-ttu-id="3ba36-107">Diese API fügt Abonnenten an eine öffentliche Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-107">This API adds subscribers to a public group</span></span>
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.creategroup
-    summary: |-
-      <span data-ttu-id="3ba36-108">Erstellen einer Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-108">Create a group</span></span>  
-      <span data-ttu-id="3ba36-109">Diese API ermöglicht die Erstellung einer einer Gruppe, einschließlich der öffentlichen Gruppen verwaltet.</span><span class="sxs-lookup"><span data-stu-id="3ba36-109">This API allows creation of a a group, including Managed Public Groups.</span></span> <span data-ttu-id="3ba36-110">Array von Zeichenfolgen verwendet als Eingabe.</span><span class="sxs-lookup"><span data-stu-id="3ba36-110">It takes array of string as input.</span></span> <span data-ttu-id="3ba36-111">Jede Zeichenfolge ist Mobiltelefonnummer (mit Ländercode).</span><span class="sxs-lookup"><span data-stu-id="3ba36-111">Each string is mobile number(with country code).</span></span> <span data-ttu-id="3ba36-112">Diese API kann maximal 100 Mobiltelefonnummern als Eingabe verwenden.</span><span class="sxs-lookup"><span data-stu-id="3ba36-112">This API can take maximum of 100 mobile numbers as input.</span></span>
-      <span data-ttu-id="3ba36-113">GroupType: Gruppe/ConnectGroup.</span><span class="sxs-lookup"><span data-stu-id="3ba36-113">GroupType: Group/ConnectGroup.</span></span> <span data-ttu-id="3ba36-114">ConnectGroup für Öffentliche Gruppe verwaltet.</span><span class="sxs-lookup"><span data-stu-id="3ba36-114">ConnectGroup for Managed public group.</span></span>
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.createsubgroup
-    summary: |-
-      <span data-ttu-id="3ba36-115">Erstellen Sie eine Sub-Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-115">Create a  sub group</span></span>  
-      <span data-ttu-id="3ba36-116">API zum Erstellen einer Gruppe.</span><span class="sxs-lookup"><span data-stu-id="3ba36-116">API to create a group.</span></span>
-      <span data-ttu-id="3ba36-117">Optionale Parameter: Mitglieder: Zeichenfolgenarray.</span><span class="sxs-lookup"><span data-stu-id="3ba36-117">Optional parameters: Members: string array.</span></span> <span data-ttu-id="3ba36-118">Jede Zeichenfolge ist Mobiltelefonnummer (mit Ländercode).</span><span class="sxs-lookup"><span data-stu-id="3ba36-118">Each string is mobile number(with country code).</span></span> <span data-ttu-id="3ba36-119">Max Zeichenfolgen-100</span><span class="sxs-lookup"><span data-stu-id="3ba36-119">Max strings-100</span></span>
-          
-          GroupType: Group/ConnectGroup. ConnectGroup for Managed public group.
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchdirectgroups
-    summary: |-
-      <span data-ttu-id="3ba36-120">Direkte FETCH-Gruppen</span><span class="sxs-lookup"><span data-stu-id="3ba36-120">Fetch direct groups</span></span>  
-      <span data-ttu-id="3ba36-121">Diese API gibt alle direkte Gruppen mit dem Benutzer zugeordnet ist</span><span class="sxs-lookup"><span data-stu-id="3ba36-121">This API returns all direct groups attached with the user</span></span>
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchgroupdetails
-    summary: |-
-      <span data-ttu-id="3ba36-122">Gruppendetails abrufen</span><span class="sxs-lookup"><span data-stu-id="3ba36-122">Fetch group details</span></span>  
-      <span data-ttu-id="3ba36-123">Diese API kann verwendet werden, zum Abrufen von Informationen für eine Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-123">This API can be used to fetch details for a group</span></span>
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchmembers
-    summary: |-
-      <span data-ttu-id="3ba36-124">Abrufen der Mitglieder einer Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-124">Fetch members of a group</span></span>  
-      <span data-ttu-id="3ba36-125">Diese API gibt die Liste der Elemente in einer Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-125">This API returns list of members in a group</span></span>
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchsubgroup
-    summary: |-
-      <span data-ttu-id="3ba36-126">Diese API wird verwendet, um einer Gruppe Untergruppen abrufen</span><span class="sxs-lookup"><span data-stu-id="3ba36-126">This API is used to fetch sub-groups of a group</span></span>  
-       <span data-ttu-id="3ba36-127">Abrufen von Untergruppen einer Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-127">Fetch sub-groups of a group</span></span>
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.getsubscribers
-    summary: |-
-      <span data-ttu-id="3ba36-128">Abrufen von Abonnenten von einer öffentlichen Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-128">Get Subscribers of a public group</span></span>  
-      <span data-ttu-id="3ba36-129">Diese API ruft die Liste der Teilnehmer über eine verwaltete öffentliche Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-129">This API fetches list of subscribers of a managed public group</span></span>
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removegroupassubgroup
-    summary: <span data-ttu-id="3ba36-130">Entfernen Sie die Gruppe als eine Untergruppe in eine andere Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-130">Remove group as a sub-group to another group</span></span>
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removemembers
-    summary: |-
-      <span data-ttu-id="3ba36-131">Entfernen von Mitgliedern aus einer Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-131">Remove members from a group</span></span>  
-      <span data-ttu-id="3ba36-132">Diese API ermöglicht entfernungen von Elementen aus einer Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-132">This API allows removals of members from a group</span></span>
-  - uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removesubscribers
-    summary: |-
-      <span data-ttu-id="3ba36-133">Entfernen von Abonnenten aus einer öffentlichen Gruppe</span><span class="sxs-lookup"><span data-stu-id="3ba36-133">Remove Subscribers from a public group</span></span>  
-      <span data-ttu-id="3ba36-134">Diese API ermöglicht dem Benutzer, um Abonnenten aus einer öffentlichen Gruppe zu entfernen.</span><span class="sxs-lookup"><span data-stu-id="3ba36-134">This API lets a user to remove subscribers from a public group</span></span>
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addmembers
+  summary: "Hinzufügen von Mitgliedern zu einer Gruppe  \nDiese API ermöglicht das Hinzufügen von Mitgliedern zu einer Gruppe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubgroup
+  summary: "Mit dieser API können Sie eine Gruppe als Untergruppe zu einer anderen Gruppe hinzufügen.  \nHinzufügen einer Gruppe als Untergruppe zu einer anderen Gruppe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubscribers
+  summary: "Hinzufügen von Teilnehmern zu einer öffentlichen Gruppe  \nDiese API fügt einer öffentlichen Gruppe Abonnenten hinzu."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.creategroup
+  summary: "Erstellen einer Gruppe  \nDiese API ermöglicht das Erstellen einer a-Gruppe, einschließlich verwalteter öffentlicher Gruppen. Es wird ein Array von Zeichenfolgen als Eingabe benötigt. Jede Zeichenfolge ist eine Mobiltelefonnummer (mit Landesvorwahl). Diese API kann maximal 100 Mobiltelefonnummern als Eingabe annehmen.\nGroupType: Group/connectgroup. Connectgroup für die verwaltete öffentliche Gruppe."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.createsubgroup
+  summary: "Erstellen einer Untergruppe  \nAPI zum Erstellen einer Gruppe.\nOptionale Parameter: Members: String-Array. Jede Zeichenfolge ist eine Mobiltelefonnummer (mit Landesvorwahl). Max. Zeichenfolgen-100\n    \n    GroupType: Group/ConnectGroup. ConnectGroup for Managed public group."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchdirectgroups
+  summary: "Direkte Gruppen abrufen  \nDiese API gibt alle mit dem Benutzer verknüpften direkten Gruppen zurück."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchgroupdetails
+  summary: "Fetch Group Details  \nDiese API kann verwendet werden, um Details für eine Gruppe abzurufen."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchmembers
+  summary: "Abrufen von Mitgliedern einer Gruppe  \nDiese API gibt eine Liste der Mitglieder in einer Gruppe zurück."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchsubgroup
+  summary: "Diese API wird zum Abrufen von Untergruppen einer Gruppe verwendet.  \n Abrufen von Untergruppen einer Gruppe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.getsubscribers
+  summary: "Abonnenten einer öffentlichen Gruppe abrufen  \nDiese API ruft eine Liste der Abonnenten einer verwalteten öffentlichen Gruppe ab."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removegroupassubgroup
+  summary: Gruppe als Untergruppe zu einer anderen Gruppe entfernen
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removemembers
+  summary: "Entfernen von Mitgliedern aus einer Gruppe  \nDiese API ermöglicht das Entfernen von Mitgliedern aus einer Gruppe."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removesubscribers
+  summary: "Entfernen von Teilnehmern aus einer öffentlichen Gruppe  \nMit dieser API können Benutzer Abonnenten aus einer öffentlichen Gruppe entfernen."
+metadata:
+  ms.openlocfilehash: fc3f120288146de2e517b13ced3c8818a45e25aa
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384196"

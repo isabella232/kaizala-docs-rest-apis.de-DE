@@ -3,81 +3,88 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.getrefreshtoken
 name: Get Refresh Token
 service: Kaizala
 groupName: Authentication APIs
-apiVersion: '1.0'
-summary: |-
-  <span data-ttu-id="0d126-101">Melden Sie sich mit Pin und ApplicationId Refresh token abrufen</span><span class="sxs-lookup"><span data-stu-id="0d126-101">Login with pin and applicationId to get refresh token</span></span>  
-  <span data-ttu-id="0d126-102">Diese API Aktualisierungstoken für die angegebene Anwendung/Connector-Id generiert, wenn Pin, Mobiltelefonnummer & Id Application/Connector wird bereitgestellt.</span><span class="sxs-lookup"><span data-stu-id="0d126-102">This API generates refresh token for the given Application/Connector Id, when pin, mobile number & Application/Connector Id is provided.</span></span>
+apiVersion: "1.0"
+summary: "Anmeldung mit PIN und ApplicationId zum Abrufen des Aktualisierungs Tokens  \nDiese API generiert Aktualisierungstoken für die angegebene Application/Connector-ID, wenn Pin, Mobiltelefonnummer & Application/Connector-ID bereitgestellt wird."
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'POST https://api.kaiza.la/v1/loginWithPinAndApplicationId'
+- content: POST https://api.kaiza.la/v1/loginWithPinAndApplicationId
 uriParameters: []
 responses:
-  - name: 200 OK
-    description: ''
-    types:
-      - uid: Response - Refresh Token
+- name: 200 OK
+  description: ''
+  types:
+  - uid: Response - Refresh Token
 requestBody:
-  - parameters:
-      - name: mobileNumber
-        in: body
-        isRequired: true
-        description: <span data-ttu-id="0d126-103">Telefon (Mobil) für das Token generiert würde</span><span class="sxs-lookup"><span data-stu-id="0d126-103">Mobile Number for which token would be generated</span></span>
-        types:
-          - uid: string
-      - name: applicationId
-        in: body
-        isRequired: true
-        description: <span data-ttu-id="0d126-104">ID der Connector zugeordnet</span><span class="sxs-lookup"><span data-stu-id="0d126-104">ID associated with the Connector</span></span>
-        types:
-          - uid: string
-      - name: pin
-        in: body
-        isRequired: true
-        description: '<span data-ttu-id="0d126-105">OTP gesendet, um die angegebene Mobiltelefonnummer</span><span class="sxs-lookup"><span data-stu-id="0d126-105">OTP sent to the given mobile number</span></span>'
-        types:
-          - uid: integer
-requestHeader:
-  - name: Content-Type
-    in: header
+- name: default
+  parameters:
+  - name: mobileNumber
+    in: body
     isRequired: true
-    description: <span data-ttu-id="0d126-106">application/json</span><span class="sxs-lookup"><span data-stu-id="0d126-106">application/json</span></span>
+    description: Mobiltelefonnummer für das generierte Token
     types:
-      - uid: string
+    - uid: string
+  - name: applicationId
+    in: body
+    isRequired: true
+    description: Dem Connector zugeordnete ID
+    types:
+    - uid: string
+  - name: pin
+    in: body
+    isRequired: true
+    description: An die angegebene Mobiltelefonnummer gesendetes OTP
+    types:
+    - uid: integer
+requestHeader:
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
 definitions:
-  - name: Response - Refresh Token
-    description: <span data-ttu-id="0d126-107">Melden Sie sich mit Pin und ApplicationId Refresh token abrufen</span><span class="sxs-lookup"><span data-stu-id="0d126-107">Login with pin and applicationId to get refresh token</span></span>
-    kind: object
-    properties:
-      - name: refreshToken
-        description: <span data-ttu-id="0d126-108">Wenn der jeweilige Connector Zugriff auf die Gruppe gewährt wurde durch die Kaizala Gruppe Admin freigegeben refreshToken</span><span class="sxs-lookup"><span data-stu-id="0d126-108">refreshToken shared by the Kaizala Group Admin when the respective Connector was granted access to the group</span></span>
-        types:
-          - uid: string
-      - name: grantedScope
-        description: '<span data-ttu-id="0d126-109">Access-Bereich, der der angegebene Anwendung/Connector erteilt wurde</span><span class="sxs-lookup"><span data-stu-id="0d126-109">Access Scope that the given Application/Connector has been granted</span></span>'
-        types:
-          - uid: string
-      - name: refreshTokenExpiry
-        description: <span data-ttu-id="0d126-110">Es gibt die Ablaufzeit für RefreshToken in Epoche time(milliseconds) an.</span><span class="sxs-lookup"><span data-stu-id="0d126-110">It indicates the expiry time for refreshToken in epoch time(milliseconds)</span></span>
-        types:
-          - uid: integer
-  - name: Request - Refresh Token
-    description: <span data-ttu-id="0d126-111">Melden Sie sich mit Pin und ApplicationId Refresh token abrufen</span><span class="sxs-lookup"><span data-stu-id="0d126-111">Login with pin and applicationId to get refresh token</span></span>
-    kind: object
-    properties:
-      - name: mobileNumber
-        description: <span data-ttu-id="0d126-112">Telefon (Mobil) für das Token generiert würde</span><span class="sxs-lookup"><span data-stu-id="0d126-112">Mobile Number for which token would be generated</span></span>
-        types:
-          - uid: string
-      - name: applicationId
-        description: <span data-ttu-id="0d126-113">ID der Connector zugeordnet</span><span class="sxs-lookup"><span data-stu-id="0d126-113">ID associated with the Connector</span></span>
-        types:
-          - uid: string
-      - name: pin
-        description: '<span data-ttu-id="0d126-114">OTP gesendet, um die angegebene Mobiltelefonnummer</span><span class="sxs-lookup"><span data-stu-id="0d126-114">OTP sent to the given mobile number</span></span>'
-        types:
-          - uid: integer
+- name: Response - Refresh Token
+  description: Anmeldung mit PIN und ApplicationId zum Abrufen des Aktualisierungs Tokens
+  kind: object
+  properties:
+  - name: refreshToken
+    description: vom Kaizala-Gruppenadministrator freigegebene refreshToken, wenn dem jeweiligen Connector Zugriff auf die Gruppe gewährt wurde
+    types:
+    - uid: string
+  - name: grantedScope
+    description: Zugriffsbereich, für den die angegebene Anwendung/der Connector erteilt wurde
+    types:
+    - uid: string
+  - name: refreshTokenExpiry
+    description: Es gibt die Ablaufzeit für refreshToken in Epoch time (Millisekunden)
+    types:
+    - uid: integer
+- name: Request - Refresh Token
+  description: Anmeldung mit PIN und ApplicationId zum Abrufen des Aktualisierungs Tokens
+  kind: object
+  properties:
+  - name: mobileNumber
+    description: Mobiltelefonnummer für das generierte Token
+    types:
+    - uid: string
+  - name: applicationId
+    description: Dem Connector zugeordnete ID
+    types:
+    - uid: string
+  - name: pin
+    description: An die angegebene Mobiltelefonnummer gesendetes OTP
+    types:
+    - uid: integer
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: c0f09d4873945e416a26ed6d846396a89e9376eb
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384134"

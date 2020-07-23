@@ -3,57 +3,64 @@ uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubscribers
 name: Add Subscribers
 service: Kaizala
 groupName: Group Management APIs
-apiVersion: '1.0'
-summary: |-
-  <span data-ttu-id="5e894-101">Hinzufügen von Abonnenten an eine öffentliche Gruppe</span><span class="sxs-lookup"><span data-stu-id="5e894-101">Add Subscribers to a public group</span></span>  
-  <span data-ttu-id="5e894-102">Diese API fügt Abonnenten an eine öffentliche Gruppe</span><span class="sxs-lookup"><span data-stu-id="5e894-102">This API adds subscribers to a public group</span></span>
+apiVersion: "1.0"
+summary: "Hinzufügen von Teilnehmern zu einer öffentlichen Gruppe  \nDiese API fügt einer öffentlichen Gruppe Abonnenten hinzu."
 consumes:
-  - application/json
+- application/json
 produces:
-  - application/json
+- application/json
 paths:
-  - content: 'PUT https://{endpoint-url}/v1/groups/{test-public-group-id}/subscribers/add'
+- content: PUT https://{endpoint-url}/v1/groups/{test-public-group-id}/subscribers/add
 uriParameters:
-  - name: test-public-group-id
-    in: path
-    isRequired: true
-    description: ''
-    types:
-      - uid: string
+- name: test-public-group-id
+  in: path
+  isRequired: true
+  description: ''
+  types:
+  - uid: string
 responses:
-  - name: 200 OK
-    description: ''
+- name: 200 OK
+  description: ''
 requestBody:
-  - parameters:
-      - name: subscribers
-        in: body
-        isRequired: true
-        description: <span data-ttu-id="5e894-103">Liste der mobilen Teilnehmernummer mit Ländercode</span><span class="sxs-lookup"><span data-stu-id="5e894-103">List of subscriber mobile number with country code</span></span>
-        types:
-          - uid: string
-            isArray: true
+- name: default
+  parameters:
+  - name: subscribers
+    in: body
+    isRequired: true
+    description: Liste der Teilnehmer Mobilnummer mit Landesvorwahl
+    types:
+    - uid: string
+      isArray: true
 requestHeader:
-  - name: accessToken
-    in: header
-    isRequired: true
-    description: <span data-ttu-id="5e894-104">Access Token vom Auth Endpunkt</span><span class="sxs-lookup"><span data-stu-id="5e894-104">Access Token received from the auth end-point</span></span>
-    types:
-      - uid: string
-  - name: Content-Type
-    in: header
-    isRequired: true
-    description: <span data-ttu-id="5e894-105">application/json</span><span class="sxs-lookup"><span data-stu-id="5e894-105">application/json</span></span>
-    types:
-      - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom auth-Endpunkt empfangenes Zugriffs Token
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
 definitions:
-  - name: Request - Remove subscribers
-    description: <span data-ttu-id="5e894-106">Entfernen von Abonnenten aus einer öffentlichen Gruppe</span><span class="sxs-lookup"><span data-stu-id="5e894-106">Remove Subscribers from a public group</span></span>
-    kind: object
-    properties:
-      - name: subscribers
-        description: <span data-ttu-id="5e894-107">Liste der mobilen Teilnehmernummer mit Ländercode</span><span class="sxs-lookup"><span data-stu-id="5e894-107">List of subscriber mobile number with country code</span></span>
-        types:
-          - uid: string
-            isArray: true
+- name: Request - Remove subscribers
+  description: Entfernen von Teilnehmern aus einer öffentlichen Gruppe
+  kind: object
+  properties:
+  - name: subscribers
+    description: Liste der Teilnehmer Mobilnummer mit Landesvorwahl
+    types:
+    - uid: string
+      isArray: true
 examples: []
 security: []
+errorCodes: []
+metadata:
+  ms.openlocfilehash: 5fab53be77a5a973ba22cd5436b546870616c8a6
+  ms.sourcegitcommit: d95e42eaf596f2fd27330bd4bfd6525f356a9f2e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "45384224"
