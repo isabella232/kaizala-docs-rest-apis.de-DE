@@ -18,8 +18,12 @@
       "template_folder": "_themes"
     }
   ],
-  "notification_subscribers": ["mor-oitac-eng@moravia.com"],
-  "branches_to_filter": ["live"],
+  "notification_subscribers": [
+    "mor-oitac-eng@moravia.com"
+  ],
+  "branches_to_filter": [
+    "live"
+  ],
   "skip_source_output_uploading": false,
   "need_preview_pull_request": false,
   "contribution_branch_mappings": {},
@@ -32,5 +36,8 @@
     }
   ],
   "branch_target_mapping": {},
-  "need_generate_pdf_url_template": false
+  "need_generate_pdf_url_template": false,
+  "docs_build_engine": {
+    "name": "docfx_v3"
+  }
 }
