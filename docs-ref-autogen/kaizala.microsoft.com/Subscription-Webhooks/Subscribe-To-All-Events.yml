@@ -1,0 +1,111 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.subscribetoallevents
+name: Subscribe To All Events
+service: Kaizala
+groupName: Subscription Webhooks
+apiVersion: "1.0"
+summary: Abonnieren aller Ereignisse auf Aktionsebene
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://api.kaiza.la/v1/webhook
+uriParameters: []
+responses:
+- name: 200 OK
+  description: ''
+requestBody:
+- name: default
+  parameters:
+  - name: objectId
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+  - name: objectType
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+  - name: eventTypes
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: callBackUrl
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+  - name: callBackToken
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+  - name: callBackContext
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+definitions:
+- name: Request - SubscribeToAllEventsAtActionLevel
+  description: Abonnieren aller Ereignisse auf Aktionsebene
+  kind: object
+  properties:
+  - name: objectId
+    description: ''
+    types:
+    - uid: string
+  - name: objectType
+    description: ''
+    types:
+    - uid: string
+  - name: eventTypes
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: callBackUrl
+    description: ''
+    types:
+    - uid: string
+  - name: callBackToken
+    description: ''
+    types:
+    - uid: string
+  - name: callBackContext
+    description: ''
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: Weitere Informationen zu Kaizala Dienst – Abonnieren aller Ereignisse auf Aktionsebene
+  ms.openlocfilehash: aa5bbe640ed5a9b4fd57f640cdd91d35328fc1c2
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302573"
+errorCodes: []

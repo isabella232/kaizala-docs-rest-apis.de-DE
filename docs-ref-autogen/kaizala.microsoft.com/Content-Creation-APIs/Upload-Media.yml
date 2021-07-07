@@ -1,0 +1,36 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.uploadmedia
+name: Upload Media
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: "1.0"
+summary: "Hochladen Medien  \nDiese API lädt Medien (Bild, Dokument, Audio, Album oder Video) hoch."
+consumes:
+- multipart/form-data
+produces:
+- application/json
+paths:
+- content: POST https://api.kaiza.la/v1/media
+uriParameters: []
+responses:
+- name: 200 OK
+  description: ''
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+definitions: []
+examples: []
+security: []
+metadata:
+  description: "Weitere Informationen zu Kaizala-Dienst – Hochladen Medien  \nDiese API lädt Medien (Bild, Dokument, Audio, Album oder Video) hoch."
+  ms.openlocfilehash: 26527116da85019981966ad44e6809088fcb57c0
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302584"
+errorCodes: []

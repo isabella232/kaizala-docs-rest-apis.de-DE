@@ -1,0 +1,87 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.sendmessagetosubscriber
+name: Send Message To Subscriber
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: "1.0"
+summary: "Senden von Nachrichten an Abonnenten in einer öffentlichen Gruppe  \nMit dieser API können Sie eine Nachricht an Abonnenten in einer öffentlichen Gruppe senden."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://api.kaiza.la/v1/groups/{test-public-group-id}/messages
+uriParameters:
+- name: test-public-group-id
+  in: path
+  isRequired: true
+  description: ''
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestBody:
+- name: default
+  parameters:
+  - name: Message
+    in: body
+    isRequired: true
+    description: Zu sendende Textnachricht (maximal 1000 Zeichen)
+    types:
+    - uid: string
+  - name: subscribers
+    in: body
+    isRequired: true
+    description: Jedes Element entspricht einer Mobiltelefonnummer (mit Ländercode). Zb. +911999999999). Textnachrichten werden nur an die ausgewählten Abonnenten gesendet. Wird für die selektive Kommunikation mit Abonnenten im Kontext einer öffentlichen Gruppe verwendet
+    types:
+    - uid: string
+      isArray: true
+  - name: sendToAllSubscribers
+    in: body
+    isRequired: true
+    description: 'Standard: false. Nur gültig, wenn die groupId zu einer öffentlichen Gruppe gehört. True, um die Textnachricht an alle Abonnenten zu senden, was erfordert, dass der Benutzer des Tokens Administrator der öffentlichen Gruppe ist'
+    types:
+    - uid: boolean
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+definitions:
+- name: Request - SendMessageToSubscriber(s)InAPublicGroup
+  description: Senden von Nachrichten an Abonnenten in einer öffentlichen Gruppe
+  kind: object
+  properties:
+  - name: Message
+    description: Zu sendende Textnachricht (maximal 1000 Zeichen)
+    types:
+    - uid: string
+  - name: subscribers
+    description: Jedes Element entspricht einer Mobiltelefonnummer (mit Ländercode). Zb. +911999999999). Textnachrichten werden nur an die ausgewählten Abonnenten gesendet. Wird für die selektive Kommunikation mit Abonnenten im Kontext einer öffentlichen Gruppe verwendet
+    types:
+    - uid: string
+      isArray: true
+  - name: sendToAllSubscribers
+    description: 'Standard: false. Nur gültig, wenn die groupId zu einer öffentlichen Gruppe gehört. True, um die Textnachricht an alle Abonnenten zu senden, was erfordert, dass der Benutzer des Tokens Administrator der öffentlichen Gruppe ist'
+    types:
+    - uid: boolean
+examples: []
+security: []
+metadata:
+  description: "Senden von Nachrichten an Abonnenten in einer öffentlichen Gruppe  \nMit dieser API können Sie eine Nachricht an Abonnenten in einer öffentlichen Gruppe senden."
+  ms.openlocfilehash: ca8166949596f569cc2227f9d50144b01366e0ce
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302563"
+errorCodes: []

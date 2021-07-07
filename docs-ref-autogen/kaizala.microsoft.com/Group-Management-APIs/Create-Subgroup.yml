@@ -1,0 +1,97 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.createsubgroup
+name: Create Subgroup
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: "1.0"
+summary: "Erstellen einer Untergruppe  \nAPI zum Erstellen einer Gruppe.\nOptionale Parameter: Elemente: Zeichenfolgenarray. Jede Zeichenfolge ist eine Mobiltelefonnummer (mit Ländercode). Max. Zeichenfolgen- 100\n    \n    GroupType: Group/ConnectGroup. ConnectGroup for Managed public group."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://{endpoint-url}/v1/groups/{test-group-id}/subgroups
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID, die der angegebenen Gruppe zugeordnet ist
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestBody:
+- name: default
+  parameters:
+  - name: name
+    in: body
+    isRequired: true
+    description: Name der Gruppe
+    types:
+    - uid: string
+  - name: welcomeMessage
+    in: body
+    isRequired: true
+    description: Willkommensnachricht, die dem neuen Gruppenmitglied angezeigt wird
+    types:
+    - uid: string
+  - name: members
+    in: body
+    isRequired: true
+    description: 'Mobiltelefonnummer (mit Ländercode) der Mitglieder, die hinzugefügt werden sollen. Standard: Der Benutzer des Zugriffstokens wird als Administrator der Gruppe hinzugefügt.'
+    types:
+    - uid: string
+      isArray: true
+  - name: groupType
+    in: body
+    isRequired: true
+    description: 'Enumeration: Group/ConnectGroup. ConnectGroup erstellt eine verwaltete öffentliche Gruppe. Standard: Gruppe'
+    types:
+    - uid: string
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+definitions:
+- name: Request - Create a managed public group
+  description: Erstellen einer verwalteten öffentlichen Gruppe
+  kind: object
+  properties:
+  - name: name
+    description: Name der Gruppe
+    types:
+    - uid: string
+  - name: welcomeMessage
+    description: Willkommensnachricht, die dem neuen Gruppenmitglied angezeigt wird
+    types:
+    - uid: string
+  - name: members
+    description: 'Mobiltelefonnummer (mit Ländercode) der Mitglieder, die hinzugefügt werden sollen. Standard: Der Benutzer des Zugriffstokens wird als Administrator der Gruppe hinzugefügt.'
+    types:
+    - uid: string
+      isArray: true
+  - name: groupType
+    description: 'Enumeration: Group/ConnectGroup. ConnectGroup erstellt eine verwaltete öffentliche Gruppe. Standard: Gruppe'
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: "Erstellen einer Untergruppe  \nAPI zum Erstellen einer Gruppe.\nOptionale Parameter: Elemente: Zeichenfolgenarray. Jede Zeichenfolge ist eine Mobiltelefonnummer (mit Ländercode)."
+  ms.openlocfilehash: fc483234ca09fa98fec999300fa85b1031a02aa7
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302543"
+errorCodes: []

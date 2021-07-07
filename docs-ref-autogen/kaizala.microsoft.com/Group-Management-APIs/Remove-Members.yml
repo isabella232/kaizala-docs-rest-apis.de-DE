@@ -1,0 +1,42 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removemembers
+name: Remove Members
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: "1.0"
+summary: "Entfernen von Mitgliedern aus einer Gruppe  \nDiese API ermöglicht das Entfernen von Mitgliedern aus einer Gruppe"
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: DELETE https://{endpoint-url}/v1/groups/{test-group-id}/members/364388bc-5b7f-4857-a58c-31eba18e962e
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID, die der angegebenen Gruppe zugeordnet ist
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+definitions: []
+examples: []
+security: []
+metadata:
+  description: "Weitere Informationen zu Kaizala Dienst – Entfernen von Mitgliedern aus einer Gruppe  \nDiese API ermöglicht das Entfernen von Mitgliedern aus einer Gruppe"
+  ms.openlocfilehash: e7f596cbe92cc29aa532f9eed70bc6cb5d8b1d0c
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302579"
+errorCodes: []

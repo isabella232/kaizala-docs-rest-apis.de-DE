@@ -1,0 +1,75 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.getsubscribers
+name: Get Subscribers
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: "1.0"
+summary: "Abrufen von Abonnenten einer öffentlichen Gruppe  \nDiese API ruft die Liste der Abonnenten einer verwalteten öffentlichen Gruppe ab."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://{endpoint-url}/v1/groups/{test-public-group-id}/subscribers
+uriParameters:
+- name: test-public-group-id
+  in: path
+  isRequired: true
+  description: ''
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestBody:
+- name: default
+  parameters:
+  - name: count
+    in: body
+    isRequired: true
+    description: Anzahl der Abonnenten in der öffentlichen Gruppe
+    types:
+    - uid: integer
+  - name: cursor
+    in: body
+    isRequired: true
+    description: Beginn des Resultsets. Für paginierung. Wird im Anforderungstext zum Abrufen des nächsten Resultsets verwendet. Als Antwort nur vorhanden, wenn ein gültiges nächstes Resultset vorhanden ist.
+    types:
+    - uid: string
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+definitions:
+- name: Request - Subscribers of a public group
+  description: Abrufen von Abonnenten einer öffentlichen Gruppe
+  kind: object
+  properties:
+  - name: count
+    description: Anzahl der Abonnenten in der öffentlichen Gruppe
+    types:
+    - uid: integer
+  - name: cursor
+    description: Beginn des Resultsets. Für paginierung. Wird im Anforderungstext zum Abrufen des nächsten Resultsets verwendet. Als Antwort nur vorhanden, wenn ein gültiges nächstes Resultset vorhanden ist.
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: "Weitere Informationen zu Kaizala-Dienst – Abrufen von Abonnenten einer öffentlichen Gruppe  \nDiese API ruft die Liste der Abonnenten einer verwalteten öffentlichen Gruppe ab."
+  ms.openlocfilehash: 64079d76fd23dcdbe98176698f0c5ba6b388cf8b
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302530"
+errorCodes: []

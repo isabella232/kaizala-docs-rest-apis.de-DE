@@ -1,0 +1,70 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.authenticationapis.generateaccesstoken
+name: Generate Access Token
+service: Kaizala
+groupName: Authentication APIs
+apiVersion: "1.0"
+summary: "Abrufen des Zugriffstokens  \nDiese API generiert Zugriffstoken für den Zugriff auf Kaizala Ressourcen, wenn aktualisierungstoken, Anwendungs-/Connector-ID und Anwendungs-/Connectorschlüssel bereitgestellt werden."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: GET https://api.kaiza.la/v1/accessToken
+uriParameters: []
+responses:
+- name: 200 OK
+  description: ''
+  types:
+  - uid: Response - Access Token
+requestHeader:
+- name: applicationId
+  in: header
+  isRequired: true
+  description: ID, die dem Connector zugeordnet ist
+  types:
+  - uid: string
+- name: applicationSecret
+  in: header
+  isRequired: true
+  description: Dem Connector zugeordneter geheimer Schlüssel
+  types:
+  - uid: string
+- name: refreshToken
+  in: header
+  isRequired: true
+  description: refreshToken, freigegeben vom Kaizala Gruppenadministrator, als dem entsprechenden Connector Zugriff auf die Gruppe gewährt wurde
+  types:
+  - uid: string
+definitions:
+- name: Response - Access Token
+  description: Abrufen des Zugriffstokens
+  kind: object
+  properties:
+  - name: accessToken
+    description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+    types:
+    - uid: string
+  - name: endpointUrl
+    description: Bei erfolgreicher Authentifizierung wird eine Endpunkt-URL zurückgegeben, die als API-Basis-URL für nachfolgende API-Aufrufe verwendet werden sollte.
+    types:
+    - uid: string
+  - name: accessTokenExpiry
+    description: Es gibt die Ablaufzeit für accessToken in epoch time(milliseconds) an.
+    types:
+    - uid: integer
+  - name: scope
+    description: Umfang der Berechtigungen für Kaizala Ressourcen, die ein Zugriffstoken bereitstellt
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: "Abrufen des Zugriffstokens  \nDiese API generiert Zugriffstoken für den Zugriff auf Kaizala Ressourcen, wenn aktualisierungstoken, Anwendungs-/Connector-ID und Anwendungs-/Connectorschlüssel bereitgestellt werden."
+  ms.openlocfilehash: 7ba0cbdb86bb42911109a2ba7bc461e6248d5007
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302529"
+errorCodes: []

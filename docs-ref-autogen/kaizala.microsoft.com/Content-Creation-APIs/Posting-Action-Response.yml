@@ -1,0 +1,109 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingactionresponse
+name: Posting Action Response
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: "1.0"
+summary: "Veröffentlichen einer Antwort auf eine Aktion  \nMit dieser API können Sie eine Antwort auf eine Aktion posten"
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-action-id}/responses
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID, die der angegebenen Gruppe zugeordnet ist
+  types:
+  - uid: string
+- name: test-action-id
+  in: path
+  isRequired: true
+  description: GUID, die einer bestimmten Aktion zugeordnet ist
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestBody:
+- name: default
+  parameters:
+  - name: id
+    in: body
+    isRequired: true
+    description: ID, die der Aktionsinstanz zugeordnet ist
+    types:
+    - uid: string
+  - name: actionBody
+    in: body
+    isRequired: true
+    description: "Aktionstext  \nObjekt, das Daten darstellt, die für die entsprechende Aktion erforderlich sind. Parameter würden je nach aktionstyp variieren."
+    types:
+    - uid: Request - Action Body
+  - name: responseId
+    in: body
+    description: Zum Aktualisieren vorhandener Antworten
+    types:
+    - uid: string
+  - name: actionType
+    in: body
+    isRequired: true
+    description: 'Enumerationswerte: Umfrage/Auftrag. Entweder "actionType" oder "Id" sollte angegeben werden.'
+    types:
+    - uid: string
+requestHeader:
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+definitions:
+- name: Request - Action Body
+  description: Aktionstext
+  kind: object
+  properties:
+  - name: Answers
+    description: Array von Antwortelementen für die angegebene Aktion.
+    types:
+    - uid: string
+      isArray: true
+- name: Request - PostingAResponseToAnAction
+  description: Veröffentlichen einer Antwort auf eine Aktion
+  kind: object
+  properties:
+  - name: id
+    description: ID, die der Aktionsinstanz zugeordnet ist
+    types:
+    - uid: string
+  - name: actionBody
+    description: "Aktionstext  \nObjekt, das Daten darstellt, die für die entsprechende Aktion erforderlich sind. Parameter würden je nach aktionstyp variieren."
+    types:
+    - uid: Request - Action Body
+  - name: responseId
+    description: Zum Aktualisieren vorhandener Antworten
+    types:
+    - uid: string
+  - name: actionType
+    description: 'Enumerationswerte: Umfrage/Auftrag. Entweder "actionType" oder "Id" sollte angegeben werden.'
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: "Weitere Informationen zu Kaizala Dienst – Veröffentlichen einer Antwort auf eine Aktion  \nMit dieser API können Sie eine Antwort auf eine Aktion posten"
+  ms.openlocfilehash: 5c8592f5b850b85daa072a5e85ef507202885249
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302564"
+errorCodes: []

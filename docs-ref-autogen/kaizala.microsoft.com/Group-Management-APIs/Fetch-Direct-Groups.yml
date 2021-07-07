@@ -1,0 +1,36 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchdirectgroups
+name: Fetch Direct Groups
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: "1.0"
+summary: "Abrufen direkter Gruppen  \nDiese API gibt alle mit dem Benutzer verbundenen direkten Gruppen zurück."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: GET https://{endpoint-url}/v1/groups
+uriParameters: []
+responses:
+- name: 200 OK
+  description: ''
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+definitions: []
+examples: []
+security: []
+metadata:
+  description: "Weitere Informationen zu Kaizala-Dienst – Abrufen direkter Gruppen  \nDiese API gibt alle mit dem Benutzer verbundenen direkten Gruppen zurück."
+  ms.openlocfilehash: 240fee044a54b1f3a334d9d332ea359a16bf9a6e
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302581"
+errorCodes: []

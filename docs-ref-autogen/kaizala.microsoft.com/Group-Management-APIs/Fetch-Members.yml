@@ -1,0 +1,42 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchmembers
+name: Fetch Members
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: "1.0"
+summary: "Abrufen von Mitgliedern einer Gruppe  \nDiese API gibt die Liste der Mitglieder in einer Gruppe zurück."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: GET https://api.kaiza.la/v1/groups/{test-group-id}/members
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID, die der angegebenen Gruppe zugeordnet ist
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+definitions: []
+examples: []
+security: []
+metadata:
+  description: "Erfahren Sie mehr über Kaizala Dienst – Abrufen von Mitgliedern einer Gruppe  \nDiese API gibt die Liste der Mitglieder in einer Gruppe zurück."
+  ms.openlocfilehash: 40be47d0512ab9932ada9ce10d0275b2b93e5006
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302538"
+errorCodes: []

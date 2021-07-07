@@ -1,0 +1,67 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubgroup
+name: Add Subgroup
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: "1.0"
+summary: "Diese API ermöglicht das Hinzufügen von Gruppen als Untergruppe zu einer anderen Gruppe.  \nHinzufügen einer Gruppe als Untergruppe zu einer anderen Gruppe"
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: PUT https://{endpoint-url}/v1/groups/{test-group-id}/subGroups
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID, die der angegebenen Gruppe zugeordnet ist
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestBody:
+- name: default
+  parameters:
+  - name: subGroups
+    in: body
+    isRequired: true
+    description: Array von Gruppen mit der Liste der Untergruppen( falls vorhanden)
+    types:
+    - uid: string
+      isArray: true
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+definitions:
+- name: Request - Add group as a subGroup to another group
+  description: Hinzufügen einer Gruppe als Untergruppe zu einer anderen Gruppe
+  kind: object
+  properties:
+  - name: subGroups
+    description: Array von Gruppen mit der Liste der Untergruppen( falls vorhanden)
+    types:
+    - uid: string
+      isArray: true
+examples: []
+security: []
+metadata:
+  description: "Diese API ermöglicht das Hinzufügen von Gruppen als Untergruppe zu einer anderen Gruppe.  \nHinzufügen einer Gruppe als Untergruppe zu einer anderen Gruppe"
+  ms.openlocfilehash: 588ae59565a9909354a4e9561da5203367ae1e84
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302545"
+errorCodes: []
