@@ -1,0 +1,125 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchsubgroup
+name: Fetch Subgroup
+service: Kaizala
+groupName: Group Management APIs
+apiVersion: "1.0"
+summary: Diese API wird verwendet, um Untergruppen einer Gruppe abzurufen.
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: GET https://{endpoint-url}/v1/groups/{test-group-id}/subGroups
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID, die der angegebenen Gruppe zugeordnet ist
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+  types:
+  - uid: Response - Fetch subGroup of a group
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+definitions:
+- name: Response - Fetch subGroup of a group
+  description: Abrufen von Untergruppen für eine Gruppe
+  kind: object
+  properties:
+  - name: groupName
+    description: Der Name der Gruppe
+    types:
+    - uid: string
+  - name: groupId
+    description: GUID, die der Gruppe zugeordnet ist
+    types:
+    - uid: string
+  - name: groupImageUrl
+    description: 'Zeichenfolge, die die URL des Gruppenprofilbilds angibt '
+    types:
+    - uid: string
+  - name: hasSubGroups
+    description: Gibt true zurück, wenn die Gruppe Untergruppen hat
+    types:
+    - uid: boolean
+  - name: hasParentGroups
+    description: Gibt true zurück, wenn die Gruppe über übergeordnete Gruppen verfügt.
+    types:
+    - uid: boolean
+  - name: isMappedToTenant
+    description: Gibt "true" zurück, wenn die Gruppe als Organisationsgruppe zugeordnet ist.
+    types:
+    - uid: boolean
+  - name: groupType
+    description: Gruppe/Verbinden Gruppe. Verbinden Gruppe bezieht sich auf verwaltete öffentliche Gruppe.
+    types:
+    - uid: string
+  - name: subGroups
+    description: Array von Untergruppen, über die eine bestimmte Gruppe verfügt
+    types:
+    - uid: SubGroup
+      isArray: true
+  - name: welcomeMessage
+    description: Willkommensnachricht, die neuen Beitrittsempfängern in der Gruppe angezeigt wird
+    types:
+    - uid: string
+- name: SubGroup
+  description: Untergruppe
+  kind: object
+  properties:
+  - name: groupName
+    description: Der Name der Gruppe
+    types:
+    - uid: string
+  - name: groupId
+    description: GUID, die der Gruppe zugeordnet ist
+    types:
+    - uid: string
+  - name: groupImageUrl
+    description: 'Zeichenfolge, die die URL des Gruppenprofilbilds angibt '
+    types:
+    - uid: string
+  - name: hasSubGroups
+    description: Gibt true zurück, wenn die Gruppe Untergruppen hat
+    types:
+    - uid: boolean
+  - name: hasParentGroups
+    description: Gibt true zurück, wenn die Gruppe über übergeordnete Gruppen verfügt.
+    types:
+    - uid: boolean
+  - name: isMappedToTenant
+    description: Gibt "true" zurück, wenn die Gruppe als Organisationsgruppe zugeordnet ist.
+    types:
+    - uid: boolean
+  - name: groupType
+    description: Gruppe/Verbinden Gruppe. Verbinden Gruppe bezieht sich auf verwaltete öffentliche Gruppe.
+    types:
+    - uid: string
+  - name: isDuplicate
+    description: Gibt "true" zurück, wenn die angegebene Gruppen-ID bereits vorhanden ist.
+    types:
+    - uid: boolean
+  - name: welcomeMessage
+    description: 'Willkommensnachricht, die neuen Beitrittsempfängern in der Gruppe angezeigt wird '
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: Weitere Informationen zu Kaizala Dienst – Diese API wird verwendet, um Untergruppen einer Gruppe abzurufen.
+  ms.openlocfilehash: 624f5a6f6ff8a3545865014eb365766729ab5de2
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302532"
+errorCodes: []

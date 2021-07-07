@@ -1,0 +1,130 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postingsurveyresponse
+name: Posting Survey Response
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: "1.0"
+summary: "Veröffentlichen einer Antwort auf eine Umfrage  \nMit dieser API können Sie eine Antwort auf eine bestimmte Umfrage veröffentlichen."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-survey-id}/responses
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID, die der angegebenen Gruppe zugeordnet ist
+  types:
+  - uid: string
+- name: test-survey-id
+  in: path
+  isRequired: true
+  description: ''
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestBody:
+- name: default
+  parameters:
+  - name: actionType
+    in: body
+    isRequired: true
+    description: Aktionstyp
+    types:
+    - uid: string
+  - name: actionBody
+    in: body
+    isRequired: true
+    description: Umfrageaktionstext
+    types:
+    - uid: SurveyActionBody
+requestHeader:
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+definitions:
+- name: SurveyActionBody
+  description: Umfrageaktionstext
+  kind: object
+  properties:
+  - name: responseName
+    description: Name der Antwort
+    types:
+    - uid: string
+  - name: responseLocation
+    description: ResponseLocation
+    types:
+    - uid: ResponseLocation
+  - name: Answers
+    description: Antwort
+    types:
+    - uid: Answer
+      isArray: true
+- name: Request - PostingAResponseToASurvey
+  description: Veröffentlichen einer Antwort auf eine Umfrage
+  kind: object
+  properties:
+  - name: actionType
+    description: Aktionstyp
+    types:
+    - uid: string
+  - name: actionBody
+    description: Umfrageaktionstext
+    types:
+    - uid: SurveyActionBody
+- name: ResponseLocation
+  description: ResponseLocation
+  kind: object
+  properties:
+  - name: latitude
+    description: Breitengradkoordinaten für den Standort
+    types:
+    - uid: integer
+  - name: longitude
+    description: Längengradkoordinaten für die Position
+    types:
+    - uid: integer
+  - name: name
+    description: Der Name des Orts, dem die Koordinaten des Standorts entsprechen
+    types:
+    - uid: string
+- name: Answer
+  description: Antwort
+  kind: object
+  properties:
+  - name: lt
+    description: Breitengradkoordinaten für den Standort
+    types:
+    - uid: integer
+  - name: lg
+    description: Längengradkoordinaten für die Position
+    types:
+    - uid: integer
+  - name: n
+    description: ''
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: "Erfahren Sie mehr über Kaizala Dienst – Veröffentlichen einer Antwort auf eine Umfrage  \nMit dieser API können Sie eine Antwort auf eine bestimmte Umfrage veröffentlichen."
+  ms.openlocfilehash: d9b5e78f6db1f691796812810f5d33103630f6ef
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302568"
+errorCodes: []

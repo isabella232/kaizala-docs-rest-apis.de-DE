@@ -1,0 +1,48 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis.fetchjobs
+name: Fetch Jobs
+service: Kaizala
+groupName: Content Query APIs
+apiVersion: "1.0"
+summary: Abrufen von Aufträgen in einer Gruppe
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: GET https://{endpoint-url}/v1/groups/{test-group-id}/actions?actionType={actionType}
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID, die der angegebenen Gruppe zugeordnet ist
+  types:
+  - uid: string
+- name: actionType
+  in: query
+  isRequired: true
+  description: Aktionstyp
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+definitions: []
+examples: []
+security: []
+metadata:
+  description: Weitere Informationen zu Kaizala Dienst – Abrufen von Aufträgen in einer Gruppe
+  ms.openlocfilehash: 267d5af355584a14483b30dfd2a4845c78bab8c2
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302548"
+errorCodes: []

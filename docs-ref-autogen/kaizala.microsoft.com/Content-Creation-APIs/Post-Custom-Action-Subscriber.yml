@@ -1,0 +1,109 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentcreationapis.postcustomactionsubscriber
+name: Post Custom Action Subscriber
+service: Kaizala
+groupName: Content Creation APIs
+apiVersion: "1.0"
+summary: "Veröffentlichen benutzerdefinierter Aktionen an Abonnenten in einer öffentlichen Gruppe  \nMit dieser API können Sie eine benutzerdefinierte Aktion in Untergruppen in einer öffentlichen Gruppe veröffentlichen."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://{endpoint-url}/v1/groups/{test-public-group-id}/actions
+uriParameters:
+- name: test-public-group-id
+  in: path
+  isRequired: true
+  description: GUID, die der angegebenen öffentlichen Gruppe zugeordnet ist
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestBody:
+- name: default
+  parameters:
+  - name: id
+    in: body
+    isRequired: true
+    description: Aktionspaket-ID
+    types:
+    - uid: string
+  - name: actionBody
+    in: body
+    isRequired: true
+    description: Benutzerdefinierte Aktion, die an einen Abonnenten gesendet wird
+    types:
+    - uid: SubscribersCustomActionBody
+  - name: subscribers
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: sendToAllSubscribers
+    in: body
+    isRequired: true
+    description: ''
+    types:
+    - uid: boolean
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+- name: Content-Type
+  in: header
+  isRequired: true
+  description: application/json
+  types:
+  - uid: string
+definitions:
+- name: SubscribersCustomActionBody
+  description: Benutzerdefinierte Aktion, die an einen Abonnenten gesendet wird
+  kind: object
+  properties:
+  - name: title
+    description: Titel
+    types:
+    - uid: string
+  - name: validity
+    description: Gültigkeit
+    types:
+    - uid: integer
+- name: Request - Send Custom Action To Subscriber(s)
+  description: Veröffentlichen benutzerdefinierter Aktionen an Abonnenten in einer öffentlichen Gruppe
+  kind: object
+  properties:
+  - name: id
+    description: Aktionspaket-ID
+    types:
+    - uid: string
+  - name: actionBody
+    description: Benutzerdefinierte Aktion, die an einen Abonnenten gesendet wird
+    types:
+    - uid: SubscribersCustomActionBody
+  - name: subscribers
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: sendToAllSubscribers
+    description: ''
+    types:
+    - uid: boolean
+examples: []
+security: []
+metadata:
+  description: "Veröffentlichen benutzerdefinierter Aktionen an Abonnenten in einer öffentlichen Gruppe  \nMit dieser API können Sie eine benutzerdefinierte Aktion in Untergruppen in einer öffentlichen Gruppe veröffentlichen."
+  ms.openlocfilehash: c17856421dbbc8a51a0f1e528d6b6e1dfbea54d1
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302565"
+errorCodes: []

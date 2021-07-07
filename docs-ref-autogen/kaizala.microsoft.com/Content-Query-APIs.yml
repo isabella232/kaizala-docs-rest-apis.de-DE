@@ -1,0 +1,19 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis
+name: Content Query APIs
+summary: 'Diese APIs rufen die Liste der Aktionsinstanzen ab, die an eine Gruppe gesendet werden. <Table>  <tr><th> Aktion </th> <th>GET unterstützt </th><th> Id </th></tr> <tr><td> Bildanlage </td> <td> Ja </td> <td>  Abbildung  </td></tr> <tr><td> Audioanlage </td> <td> Nein </td> <td>  audio  </td></tr> <tr><td> Dokumentanlage </td> <td> Ja </td>  <td>  document  </td></tr> <tr><td> Kontaktanlage </td> <td> Nein </td> <td>  Nicht zutreffend  </td></tr> <tr><td> Auftrag </td> <td> Ja </td>  <td>  Auftrag  </td></tr> <tr><td> Umfrage </td> <td> Ja </td> <td>  Umfrage  </td></tr> <tr><td> Foto mit Standort </td> <td> Ja </td> <td>  photoWithLocation  </td></tr> <tr><td> Treffen wir uns </td> <td> Ja </td> <td>  LetsMeet  </td></tr> <tr><td> Kurzumfrage </td> <td> Ja </td> <td>  Umfrage  </td></tr> <tr><td> Speicherort freigeben </td> <td> Ja </td> <td>  shareLocation  </td></tr> <tr><td> Anforderungsspeicherort </td> <td> Nein </td> <td>  Nicht zutreffend  </td></tr> <tr><td> Live-Speicherort </td> <td> Nein </td> <td>  Nicht zutreffend  </td></tr> <tr><td> Ankündigung </td> <td> Nein </td> <td>  Ankündigung  </td></tr> </Table>   '
+apiVersion: "1.0"
+service: Kaizala
+metadata:
+  description: 'Diese APIs rufen die Liste der Aktionsinstanzen ab, die an eine Gruppe gesendet werden. <Table>  <tr><th> Aktion </th> <th>GET unterstützt </th><th> Id </th></tr> <tr><td> Bildanlage </td> <td> Ja </td> <td>  Abbildung  </td></tr> <tr><td> Audioanlage </td> <td> Nein </td> <td>  audio  </td></tr> <tr><td> Dokumentanlage </td> <td> Ja </td>  <td>  document  </td></tr> <tr><td> Kontaktanlage </td> <td> Nein </td> <td>  Nicht zutreffend  </td></tr> <tr><td> Auftrag </td> <td> Ja </td>  <td>  Auftrag  </td></tr> <tr><td> Umfrage </td> <td> Ja </td> <td>  Umfrage  </td></tr> <tr><td> Foto mit Standort </td> <td> Ja </td> <td>  photoWithLocation  </td></tr> <tr><td> Treffen wir uns </td> <td> Ja </td> <td>  LetsMeet  </td></tr> <tr><td> Kurzumfrage </td> <td> Ja </td> <td>  Umfrage  </td></tr> <tr><td> Speicherort freigeben </td> <td> Ja </td> <td>  shareLocation  </td></tr> <tr><td> Anforderungsspeicherort </td> <td> Nein </td> <td>  Nicht zutreffend  </td></tr> <tr><td> Live-Speicherort </td> <td> Nein </td> <td>  Nicht zutreffend  </td></tr> <tr><td> Ankündigung </td> <td> Nein </td> <td>  Ankündigung  </td></tr> </Table>   '
+  ms.openlocfilehash: b9969f87cc9780b67473360cc6ee3f7414fdac76
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302589"
+operations:
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis.fetchingsurveyresponses
+  summary: "Abrufen von Umfrageantworten  \nMit dieser API können Sie Antworten für eine Umfrage abrufen."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis.fetchjobs
+  summary: Abrufen von Aufträgen in einer Gruppe

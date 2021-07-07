@@ -1,0 +1,54 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.contentqueryapis.fetchingsurveyresponses
+name: Fetching Survey Responses
+service: Kaizala
+groupName: Content Query APIs
+apiVersion: "1.0"
+summary: "Abrufen von Umfrageantworten  \nMit dieser API können Sie Antworten für eine Umfrage abrufen."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: GET https://{endpoint-url}/v1/groups/{test-group-id}/actions/{test-survey-id}?getDetails={getDetails}
+uriParameters:
+- name: test-group-id
+  in: path
+  isRequired: true
+  description: GUID, die der angegebenen Gruppe zugeordnet ist
+  types:
+  - uid: string
+- name: test-survey-id
+  in: path
+  isRequired: true
+  description: GUID, die der angegebenen Umfrage zugeordnet ist
+  types:
+  - uid: string
+- name: getDetails
+  in: query
+  isRequired: true
+  description: ''
+  types:
+  - uid: boolean
+responses:
+- name: 200 OK
+  description: ''
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+definitions: []
+examples: []
+security: []
+metadata:
+  description: "Erfahren Sie mehr über Kaizala Dienst – Abrufen von Umfrageantworten  \nMit dieser API können Sie Antworten für eine Umfrage abrufen."
+  ms.openlocfilehash: 9f52e605cc1836b8cec0b0f53eb1152a861b91d1
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302549"
+errorCodes: []

@@ -1,0 +1,48 @@
+### YamlMime:RESTOperation
+uid: api.kaiza.la.v1.kaizala.microsoft.com.subscriptionwebhooks.getallwebhooks
+name: Get All Webhooks
+service: Kaizala
+groupName: Subscription Webhooks
+apiVersion: "1.0"
+summary: "Abrufen aller Webhooks in einer Gruppe  \nDiese API gibt alle Webhooks einer Gruppe zurück."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: GET https://{endpoint-url}/v1/webhook?objectId={objectId}&objectType={objectType}
+uriParameters:
+- name: objectId
+  in: query
+  isRequired: true
+  description: Bezeichner, der das Objekt darstellt, in dem Kontext die Webhooks erstellt werden müssen. For ObjectType=Group, its group's Identifier, For ObjectType=Action, its actionId, For ObjectType=ActionPackage, its action-package-id
+  types:
+  - uid: string
+- name: objectType
+  in: query
+  isRequired: true
+  description: 'Enumeration: Group/Action/ActionPackage'
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: ''
+requestHeader:
+- name: accessToken
+  in: header
+  isRequired: true
+  description: Vom Authentifizierungsendpunkt empfangenes Zugriffstoken
+  types:
+  - uid: string
+definitions: []
+examples: []
+security: []
+metadata:
+  description: "Weitere Informationen zu Kaizala-Dienst – Abrufen aller Webhooks in einer Gruppe  \nDiese API gibt alle Webhooks einer Gruppe zurück."
+  ms.openlocfilehash: cb88f65b84d1bc31a17898b4ad5346ddf2964244
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302531"
+errorCodes: []

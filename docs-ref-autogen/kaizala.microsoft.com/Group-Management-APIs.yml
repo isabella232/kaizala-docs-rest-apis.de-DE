@@ -1,0 +1,41 @@
+### YamlMime:RESTOperationGroup
+uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis
+name: Group Management APIs
+summary: Mit diesen APIs können Gruppenadministratoren auf Gruppenressourcen zugreifen und Gruppenmitgliedschaften entsprechend verwalten. <br />
+apiVersion: "1.0"
+service: Kaizala
+metadata:
+  description: Mit diesen APIs können Gruppenadministratoren auf Gruppenressourcen zugreifen und Gruppenmitgliedschaften entsprechend verwalten. <br />
+  ms.openlocfilehash: 9e0e3a9a0ad9eb8317f2e1f5d038ad27213da0db
+  ms.sourcegitcommit: bddd6c480c2dd04ff123d76a536bb273b15f3c4e
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 07/06/2021
+  ms.locfileid: "53302546"
+operations:
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addmembers
+  summary: "Hinzufügen von Mitgliedern zu einer Gruppe  \nDiese API ermöglicht das Hinzufügen von Mitgliedern zu einer Gruppe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubgroup
+  summary: "Diese API ermöglicht das Hinzufügen von Gruppen als Untergruppe zu einer anderen Gruppe.  \nHinzufügen einer Gruppe als Untergruppe zu einer anderen Gruppe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.addsubscribers
+  summary: "Hinzufügen von Abonnenten zu einer öffentlichen Gruppe  \nDiese API fügt Abonnenten zu einer öffentlichen Gruppe hinzu."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.creategroup
+  summary: "Erstellen einer Gruppe  \nDiese API ermöglicht das Erstellen einer Gruppe, einschließlich verwalteter öffentlicher Gruppen. Als Eingabe wird ein Array von Zeichenfolgen verwendet. Jede Zeichenfolge ist eine Mobiltelefonnummer (mit Ländercode). Diese API kann maximal 100 Mobiltelefonnummern als Eingabe annehmen.\nGroupType: Group/ConnectGroup. ConnectGroup für verwaltete öffentliche Gruppe."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.createsubgroup
+  summary: "Erstellen einer Untergruppe  \nAPI zum Erstellen einer Gruppe.\nOptionale Parameter: Elemente: Zeichenfolgenarray. Jede Zeichenfolge ist eine Mobiltelefonnummer (mit Ländercode). Max. Zeichenfolgen- 100\n    \n    GroupType: Group/ConnectGroup. ConnectGroup for Managed public group."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchdirectgroups
+  summary: "Abrufen direkter Gruppen  \nDiese API gibt alle mit dem Benutzer verbundenen direkten Gruppen zurück."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchgroupdetails
+  summary: "Abrufen von Gruppendetails  \nDiese API kann zum Abrufen von Details für eine Gruppe verwendet werden."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchmembers
+  summary: "Abrufen von Mitgliedern einer Gruppe  \nDiese API gibt die Liste der Mitglieder in einer Gruppe zurück."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.fetchsubgroup
+  summary: Diese API wird verwendet, um Untergruppen einer Gruppe abzurufen.
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.getsubscribers
+  summary: "Abrufen von Abonnenten einer öffentlichen Gruppe  \nDiese API ruft die Liste der Abonnenten einer verwalteten öffentlichen Gruppe ab."
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removegroupassubgroup
+  summary: Gruppe als Untergruppe zu einer anderen Gruppe entfernen
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removemembers
+  summary: "Entfernen von Mitgliedern aus einer Gruppe  \nDiese API ermöglicht das Entfernen von Mitgliedern aus einer Gruppe"
+- uid: api.kaiza.la.v1.kaizala.microsoft.com.groupmanagementapis.removesubscribers
+  summary: Mit dieser API kann ein Benutzer Abonnenten aus einer öffentlichen Gruppe entfernen.
